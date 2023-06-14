@@ -1,0 +1,152 @@
+* {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    box-sizing: border-box;
+}
+
+#sort-bar {
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    border: 2px grey;
+    padding: 0 10px 0px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sort-bar #bar {
+    background-color: rgb(241, 238, 238);
+    height: 29px;
+    padding: 4px 20px 4px 0;
+    border-radius: 6px;
+}
+#bar:hover {
+    box-shadow: rgb(23, 171, 229);
+    border: 1px;
+}
+#sort-bar #bar span {
+    font-size: small;
+    padding-left: 20px;
+
+}
+#sort-bar select {
+    font-size: 14px;
+    padding: 0;
+    border: 0;
+}
+
+#sort option {
+    font-size: 14px;
+    background-color: white;
+    padding-left: 5px;
+}
+
+#container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    background-color: rgb(255, 252, 249);
+}
+
+.filter-div {
+    width: 18%;
+    margin-right: 2%;
+    margin-left: 1%;
+    font-size: 14px;
+}
+
+
+#refine,
+#brand,
+#price,
+#category,
+#rating,
+#material {
+
+    background-color: #faf7f7;
+    padding: 1px;
+    font-weight: 600;
+    /* margin-left: 3%; */
+
+}
+
+.brand-box,
+.price-box,
+.category-box,
+.material-box,
+.rating-box p {
+    margin-left: 3%;
+}
+
+#refine {
+    background-color: #caced0;
+}
+
+.checked {
+    color: #f69f26;
+}
+
+
+/*  Product container */
+
+#productContainer {
+    width: 85%;
+
+
+}
+
+.product-list {
+    width: 100%;
+
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 3%;
+    row-gap: 1%;
+    padding: auto;
+    overflow-y: scroll;
+    padding-bottom: 20%;
+}
+
+.product {
+    width: 100%;
+    margin: auto;
+    padding: 3%;
+    padding-bottom: 18%;
+    border-radius: 1%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
+}
+
+.product:hover {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+}
+
+.product_img {
+    width: 100%;
+    height: 250px;
+    /* margin: auto; */
+    /* border: 1px solid teal; */
+    overflow: hidden;
+}
+
+.off {
+    position: relative;
+    margin-left: 70%;
+    margin-top: 5px;
+    margin-bottom: -25px;
+    color: #C33764
+}
+
+
+.buy,
+.add {
+    width: 40%;
+    height: 40px;
+    margin-left: 5%;
+    background-color: #f7ac3d;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+}    
