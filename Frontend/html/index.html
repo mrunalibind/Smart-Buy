@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Buy</title>
+
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="./Styles/footer.css">
+    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <!-- Main Navbar -->
+    <div id="mainNavbar">
+        <!-- Nav 1 : Logo and Search Bar and Login and Cart -->
+        <div id="nav1">
+            <!-- 1 Logo -->
+            <div>
+                <a href="./index.html"><img src="../Images/logo.png" alt=""></a>
+            </div>
+            <!-- 2 Search -->
+            <div>
+                <div>
+                    <form id="searchBox">
+                        <input type="text" placeholder="Search Here">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div>
+                    <p id="username"></p>
+                </div>
+            </div>
+
+            <!-- 3 Profile and Cart -->
+            <div>
+                <div>
+                    <a href="#">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="#">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a><span id="cartTotal">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- nav02 -->
+        <div id="nav02">
+            <div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="nav-menu">
+                    <div id="menu-top">
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                            <p>&nbsp;&nbsp;Hello, <span id="username">username</span></p>
+                            <i id="close" class="fa-solid fa-xmark fa-xl"></i>
+                        </div>
+                        <div>
+                            <a href="#"><button>Account</button></a>
+                            <a href="#"><button>Orders</button></a>
+                        </div>
+                    </div>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Best Sellers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">New Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Movers and Shakers</a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Digital Content And Devices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Echo & Alexa</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Fire TV</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Kindle E-Readers & eBooks</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Audible Audiobooks</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Smart Buy Prime Video</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Smart Buy Prime Music</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Shop By Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Mobiles, Computers</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">TV,Appliances, Electronics</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Men's Fashion</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Women's Fashion</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Toys, Baby Products, Kids' Fashion</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Movies, Music & Video Games</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Help & Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Your Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Customer Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sign Out</a>
+                    </li>
+                    <hr>
+                    <div id="menu-bottom">
+                        <h3>CONTACT US</h3>
+                        <br>
+                        <p class="help">WhatsApp us : <a
+                                href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&type=phone_number&app_absent=0">70003
+                                70003</a></p>
+                        <br>
+                        <p class="help">Call Us : <a href="#">1800 890 1222</a></p>
+                        <p class="help">8:00 AM to 8:00 PM, 365 days</p>
+                        <br>
+                        <p class="help">Please note that you are accessing the BETA Version of <a
+                                href="#">www.jiomart.com</a>
+                        </p>
+                        <p class="help">Should you encounter any bugs, glitches, lack of functionality, delayed
+                            deliveries,
+                            billing errors or other problems on the beta website, please email us on
+                            <a href="#">cs@jiomart.com</a>
+                        </p>
+                        <h3>DOWNLOAD APP</h3>
+                        <a href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"><img
+                                src="../Images/getFromPlatStore.PNG" alt="err"></a>
+                        <a href="https://apps.apple.com/in/app/jiomart/id1522085683"><img
+                                src="../Images/getFromApple.PNG" alt="err"></a>
+                    </div>
+
+
+                </ul>
+            </div> <span id="all">All</span>
+            <a href="#">Fresh</a>
+            <a href="#">Today's Deals</a>
+            <a href="#">Amazon miniTV</a>
+            <a href="#">Sell</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Buy Again</a>
+            <a href="#">Baby</a>
+            <a href="#">Smart Buy Business</a>
+            <a href="#">Browsing History</a>
+            <a href="#">Grocery & Gourment Foods</a>
+
+            <div class="joinPrime">
+                <p>JEE KARDA</p>
+                <div>
+                    <p>Join Prime Now</p>
+                    <p>*Redirects to </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADDS -->
+    <div class="addMain">
+        <!-- Add 01 -->
+        <div id="add1">
+            <a href="#"><button>Join Prime Now</button></a>
+        </div>
+
+        <!-- Add 02 -->
+        <div id="add2">
+            <h1><span>EXCLUSIVE</span> PRIME MEMBER SAVINGS</h1>
+            <a href="#"><button>LEARN MORE</button></a>
+        </div>
+
+        <!-- slider add  -->
+        <div class="container2">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670694788_1240x209.jpg"
+                                alt="err">
+                        </div>
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669828201_AU-Bank_1240x209.jpg"
+                                alt="err">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669828201_AU-Bank_1240x209.jpg"
+                                alt="err">
+                        </div>
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669828257_Paytm_1240_209.jpg"
+                                alt="err">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669828257_Paytm_1240_209.jpg"
+                                alt="err">
+                        </div>
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669828307_MobiKwik_1240x209.jpg"
+                                alt="err">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669828307_MobiKwik_1240x209.jpg"
+                                alt="err">
+                        </div>
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670907955_Slice_1240x209.jpg"
+                                alt="err">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670907955_Slice_1240x209.jpg"
+                                alt="err">
+                        </div>
+                        <div>
+                            <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670539009_1240x209.jpg"
+                                alt="err">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+
+        <!-- Add 03 2 in 1 -->
+        <div id="add3">
+            <!-- movie -->
+            <div></div>
+            <!-- adds -->
+            <div id="collections">
+                <!-- 1 -->
+                <div>
+                    <h2>Top collections | Amazon brands & more</h2>
+                    <div id="smart-brands">
+                        <div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/AmazonBrands/GW/QC/2023/PC_QC_186x116_bottles._SY116_CB612508910_.jpg"
+                                    alt="">
+                            </div>
+                            <p>UP to 55% off | Bottles & flasks</p>
+                        </div>
+
+                        <div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/AmazonBrands/GW/QC/2023/PC_QC_186X116_AC_fridge._SY116_CB612508910_.jpg"
+                                    alt="">
+                            </div>
+                            <p>UP to 40% off | ACs, refrigerator & more</p>
+                        </div>
+
+                        <div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/AmazonBrands/GW/QC/2023/PC_QC_186x116_Towels._SY116_CB612508910_.jpg"
+                                    alt="">
+                            </div>
+                            <p>UP to 55% off | Towels</p>
+                        </div>
+
+                        <div>
+                            <div>
+                                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/AmazonBrands/GW/QC/2023/PC_QC_186x116_Curtain._SY116_CB612508910_.jpg"
+                                    alt="">
+                            </div>
+                            <p>UP to 70% off | Visit the summer store</p>
+                        </div>
+                    </div>
+
+                    <a href="#">See more Offers</a>
+                </div>
+                <!-- 2 -->
+                <div>
+                    <h2>Bluetooth Calling Smartwatch starts at ₹1,999</h2>
+                    <div>
+                        <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wearables/PC_CategoryCard_379X304_1._SY304_CB614835787_.jpg"
+                            alt="">
+                    </div>
+
+                    <a href="#">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add 04 -->
+        <div id="add4"></div>
+    </div>
+
+    <!-- **************************Trending Brands****************************** -->
+    <div class="container3">
+        <div>
+            <div>
+                <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670350341_Samsung_Desktop_version.jpg"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670842891_1669789269_MI_Desktop.jpg"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669789289_Parle_Desktop.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669785693_Wonderchef_Desktop.jpg"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669785711_Lifelong_Desktop.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669789323_Tecno_Desktop.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670001405_Everteen_Desktop.jpg" alt="">
+            </div>
+            <div>
+                <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669910985_Campus.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- *******************Shop From Top Categories**************************** -->
+    <div class="container4">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670956920_0___Shop_From_Top_Categories___HPC_Ministore_Tile.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703570_1667906868_Skincare__Hair_care.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1670350107_Shop-From-Top-Categories-20.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703054_1669120666_Tea__Coffee.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703137_1669120884_Biscuits__Cookies.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703198_1669120723_Snacks__Namkeens.jpg"
+                            alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703300_1668783198_Shop-From-Top-Categories-19.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703341_1669354771_Shop-From-Top-Categories-16.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703402_1667814151_1666962092_Shop-From-Top-Categories-17.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1671045548_Shop-From-Top-Categories-23.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1671045576_Shop-From-Top-Categories-22.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1671045890_Shop-From-Top-Categories-10.jpg"
+                            alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703737_1667888563_Best_of_kitchenware.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703805_Shop-From-Top-Categories-14.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1671135423_Shop-From-Top-Categories-27.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1669703963_1668422823_1667814516_1666962153_Shop-From-Top-Categories-07.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1671135524_Shop-From-Top-Categories-25.jpg"
+                            alt="">
+                    </div>
+                    <div>
+                        <img src="https://www.jiomart.com/images/cms/aw_rbslider/slides/1671135574_Shop-From-Top-Categories-24.jpg"
+                            alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <div class="container5">
+        <div id="cont5-products"></div>
+    </div>
+
+    <!-- slider -->
+    <div class="slider1">
+        <div class="swiper">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div>
+                        <img src="https://assets.basspro.com/image/list/fn_select:jq:first(.%5b%5d%7Cselect(.public_id%20%7C%20endswith(%22main%22)))/3595269.json?$Prod_PLPThumb$"
+                            alt="Error">
+                        <div>
+                            <div>
+                                <h3>Herter's Turkey TSS Shotshells</h3>
+                            </div>
+                            <h4>CLUB Member Price: $34.98</h4>
+                            <p>Reg. Starting at $39.99</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.basspro.com/image/list/fn_select:jq:first(.%5b%5d%7Cselect(.public_id%20%7C%20endswith(%22main%22)))/2791055.json?$Prod_PLPThumb$"
+                            alt="Error">
+                        <div>
+                            <div>
+                                <h3>Avian-X HDR Jake & Hen Turkey Decoy</h3>
+                            </div>
+                            <h4>CLUB Member Price: $57.98</h4>
+                            <p>Reg. Starting at $139.99</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.basspro.com/image/list/fn_select:jq:first(.%5b%5d%7Cselect(.public_id%20%7C%20endswith(%22main%22)))/3415441.json?$Prod_PLPThumb$"
+                            alt="Error">
+                        <div>
+                            <div>
+                                <h3>Pursuit Hub Ground Blind with Arm Chair</h3>
+                            </div>
+                            <h4>CLUB Member Price: $89.98</h4>
+                            <p>Reg. Starting at $119.99</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.basspro.com/image/list/fn_select:jq:first(.%5b%5d%7Cselect(.public_id%20%7C%20endswith(%22main%22)))/2918525.json?$Prod_PLPThumb$"
+                            alt="Error">
+                        <div>
+                            <div>
+                                <h3>RedHead or SHE Outdoor Striker Elite Turkey Vest</h3>
+                            </div>
+                            <h4>CLUB Member Price: $89.98</h4>
+                            <p>Reg. Starting at $109.99</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div>
+                        <img src="https://assets.basspro.com/image/list/fn_select:jq:first(.%5b%5d%7Cselect(.public_id%20%7C%20endswith(%22main%22)))/2685504.json?$Prod_PLPThumb$"
+                            alt="Error">
+                        <div>
+                            <div>
+                                <h3>Garim ECHOMAP 106sv Fish Finder</h3>
+                            </div>
+                            <h4>CLUB Member Price: $999.97</h4>
+                            <p>Reg. Starting at $1999.99</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.basspro.com/image/list/fn_select:jq:first(.%5b%5d%7Cselect(.public_id%20%7C%20endswith(%22main%22)))/2425566.json?$Prod_PLPThumb$"
+                            alt="Error">
+                        <div>
+                            <div>
+                                <h3>Danner Vital Waterproof Hunting Boots for Men</h3>
+                            </div>
+                            <h4>CLUB Member Price: $149.98</h4>
+                            <p>Reg. Starting at $199.99</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.basspro.com/image/list/fn_select:jq:first(.%5b%5d%7Cselect(.public_id%20%7C%20endswith(%22main%22)))/2326632.json?$Prod_PLPThumb$"
+                            alt="Error">
+                        <div>
+                            <div>
+                                <h3>Bass Pro Shops 6.5 qt Aluminium Fish Fryer</h3>
+                            </div>
+                            <h4>CLUB Member Price: $39.99</h4>
+                            <p>Reg. Starting at $49.99</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://assets.basspro.com/image/list/fn_select:jq:first(.%5b%5d%7Cselect(.public_id%20%7C%20endswith(%22main%22)))/2874877.json?$Prod_PLPThumb$"
+                            alt="Error">
+                        <div>
+                            <div>
+                                <h3>Garim Fenix 6X Pro Solar Smartwatch</h3>
+                            </div>
+                            <h4>CLUB Member Price: $499.99</h4>
+                            <p>Reg. Starting at $949.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+
+    <!-- ADDS 2.0 -->
+    <div class="addMain">
+        <!-- a1 -->
+        <div id="add">
+            <div>
+                <img src="https://assets.basspro.com/image/upload/c_scale,f_auto,q_auto,w_298/v1678485794/DigitalCreative/2023/Campaigns/wk09-3-9/Homepage/tor-fish-the-finest.png"
+                    alt="err">
+            </div>
+            <div>
+                <img src="https://assets.basspro.com/image/upload/c_scale,f_auto,q_auto,w_301/v1678485794/DigitalCreative/2023/Campaigns/wk09-3-9/Homepage/tor-logo.png"
+                    alt="err">
+            </div>
+        </div>
+    </div>
+
+    <div id="shopByCategory">
+        <!-- 1 -->
+        <div>
+            <div>
+                <img src="https://m.media-amazon.com/images/I/41s76xjobcL.AC_SX250.jpg"
+                    alt="err">
+            </div>
+            <h3>Flower Vases</h3>
+        </div>
+        <!-- 2 -->
+        <div>
+            <div>
+                <img src="https://m.media-amazon.com/images/I/51RO+oVo9PL.AC_SX250.jpg"
+                    alt="err">
+            </div>
+            <h3>Ethnic Curtains</h3>
+        </div>
+        <!-- 3 -->
+        <div>
+            <div>
+                <img src="https://m.media-amazon.com/images/I/41BdlTz68hL.AC_SX250.jpg"
+                    alt="err">
+            </div>
+            <h3>Modern Curtains</h3>
+        </div>
+        <!-- 4 -->
+        <div>
+            <div>
+                <img src="https://m.media-amazon.com/images/I/51OXcj7JoCL.AC_SX250.jpg"
+                    alt="err">
+            </div>
+            <h3>Wall Art Pieces</h3>
+        </div>
+        <!-- 5 -->
+        <div>
+            <div>
+                <img src="https://m.media-amazon.com/images/I/41rfoky4ESL._AC_UF226,226_FMjpg_.jpg"
+                    alt="err">
+            </div>
+            <h3>Designer Lamps</h3>
+        </div>
+    </div>
+
+    <!-- text box  -->
+    <div id="txt2">
+        <h1>MILITARY APPRECIATION <span>DISCOUNT</span> </h1>
+        <div>
+            <p>AVAILABLE</p>
+            <p>IN-STORE & ONLINE</p>
+        </div>
+        <a href="#"><button>LEARN MORE</button></a>
+    </div>
+
+    <!-- TOP BRANDS -->
+    <div id="topBrands">
+        <!-- 1 -->
+        <div>
+            <img src="https://assets.basspro.com/image/upload/f_auto,q_auto/v1675727179/DigitalCreative/2023/Campaigns/wk06-2-9/Homepage/Brands-Update/logo-bps.jpg"
+                alt="">
+        </div>
+        <!-- 2 -->
+        <div>
+            <img src="https://assets.basspro.com/image/upload/f_auto,q_auto/v1675727179/DigitalCreative/2023/Campaigns/wk06-2-9/Homepage/Brands-Update/logo-redhead.jpg"
+                alt="">
+        </div>
+        <!-- 3 -->
+        <div>
+            <img src="https://assets.basspro.com/image/upload/f_auto,q_auto/v1680099928/DigitalCreative/2023/Campaigns/Wk13-3-30/Homepage/BPS/logo-winchester.png"
+                alt="">
+        </div>
+        <!-- 4 -->
+        <div>
+            <img src="https://assets.basspro.com/image/upload/f_auto,q_auto/v1675727179/DigitalCreative/2023/Campaigns/wk06-2-9/Homepage/Brands-Update/logo-garmin.jpg"
+                alt="">
+        </div>
+        <!-- 5 -->
+        <div>
+            <img src="https://assets.basspro.com/image/upload/f_auto,q_auto/v1675727179/DigitalCreative/2023/Campaigns/wk06-2-9/Homepage/Brands-Update/logo-carhartt.jpg"
+                alt="">
+        </div>
+        <!-- 6 -->
+        <div>
+            <img src="https://assets.basspro.com/image/upload/f_auto,q_auto/v1680100708/DigitalCreative/2023/Campaigns/Wk13-3-30/Homepage/BPS/logo-avianx.png"
+                alt="">
+        </div>
+        <!-- 7 -->
+        <div>
+            <img src="https://assets.basspro.com/image/upload/f_auto,q_auto/v1675727179/DigitalCreative/2023/Campaigns/wk06-2-9/Homepage/Brands-Update/logo-vortex.jpg"
+                alt="">
+        </div>
+        <!-- 8 -->
+        <div>
+            <img src="https://assets.basspro.com/image/upload/f_auto,q_auto/v1675727179/DigitalCreative/2023/Campaigns/wk06-2-9/Homepage/Brands-Update/logo-nr.jpg"
+                alt="">
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script src="./Scripts/index.js"></script>
+<!-- swipe -->
+<script>
+    const swiper = new Swiper('.swiper', {
+        slidesPerView: 1,
+        loop: true,
+
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+    });
+</script>
+<script src="../script/index.js"></script>
+
+<script>
+    let cartData = JSON.parse(localStorage.getItem("cart-data"));
+
+    const cartTotal = document.getElementById("cartTotal");
+    cartTotal.innerText = cartData.length;
+</script>
+
