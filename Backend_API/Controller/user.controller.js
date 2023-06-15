@@ -1,9 +1,9 @@
-let passport = require("../Routers/Google-ouath")
-let { UserModel } = require("../Models/User.Model")
-let nodemailer = require("nodemailer")
-let { redis } = require('../redis.db')
-let jwt = require("jsonwebtoken")
-let bcrypt = require('bcrypt')
+ let userModel = require('../Models/User.Model')
+ let {redis} = require('../redis.db')
+ let bcrypt = require('bcrypt')
+ let JWT = require('jsonwebtoken')
+ let nodemailer = require('nodemailer')
+ 
 require('dotenv').config()
 let otp = {}
 
@@ -125,7 +125,7 @@ let login = async (req, res) => {
 
         } else {
 
-            jwt.sign({ email: email }, process.env.privateKey, { expiresIn: '4h' }, async (err, token) => {
+            JWT.sign({ email: email }, process.env.privateKey, { expiresIn: '4h' }, async (err, token) => {
 
                 if (err) {
 
@@ -147,4 +147,55 @@ let login = async (req, res) => {
 
 }
 
-module.exports = { forgotPassword, logout, login }
+let signup = async (req,res)=>{
+
+    let {email,password} = req.body
+
+    bcrypt.hash(password,8, async(err,hash)=>{
+        
+       if(err){
+        res.status(500).send({msg:"something wrong to genrating of hash password"})
+       }else{
+
+      await  userModel.insertOne({email:email,password:hash})
+
+        let mailOptions = {
+            from: "bluearpon4567@gmail.com",
+            to: email,
+            subject: "One Time Verification(OTP)",
+            html: `<body>
+            <div style="font-family: Arial, sans-serif; font-size: 20px; color: #000000;">
+              <p>Dear, ${data[0].name}</p>
+              <p> I hope this email finds you well. As per your request, please find below your one-time password (OTP) to verify your identity and ensure the security of your account:</p>
+              <p> <strong style="color: #ff0000; font-weight:300">${generateOtp()}</strong></p>
+              <p>Please note that this OTP is valid for a limited time only, so we advise that you use it as soon as possible. If you have any questions or concerns regarding this OTP, please do not hesitate to contact us.</p>
+              <p>Thank you for your trust in our services and for helping us maintain the security of your account.</p>
+              <p>Best regards,</p>
+              <p>The Verification Team</p>
+            </div>
+          </body>`
+
+
+
+        }
+
+        transporter.sendMail(mailOptions, async (err, success) => {
+
+            if (err) {
+
+                res.status(500).send({ "message": "Email is wrong" })
+
+            } else {
+
+                console.log(otp.OneTimePassword)
+
+                res.send({ "OTP": otp.OneTimePassword })
+
+            }
+        })
+
+       }
+    })
+}
+
+module.exports = { forgotPassword, logout, login,signup }
