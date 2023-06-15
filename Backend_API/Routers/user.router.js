@@ -1,6 +1,6 @@
 let express = require("express")
 let passport = require("../Routers/Google-ouath")
-let {forgotPassword,logout} = require("../Controller/user.controller")
+let {forgotPassword,logout,login,signup} = require("../Controller/user.controller")
 let UserRouter = express.Router()
 require('dotenv').config()
 
@@ -31,9 +31,10 @@ UserRouter.get('/auth/google/callback',
 );
 
 //////////////////////////////////////////////////////////login/////////////////////////////
-
+UserRouter.post('/signup',signup)
 UserRouter.get("/forgotPassword", forgotPassword)
 UserRouter.delete("/logout",logout)
+UserRouter.post('/login',login)
 
 
 
