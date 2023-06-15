@@ -1,0 +1,459 @@
+.addMain {
+  width: 95%;
+  margin: auto;
+}
+
+#add1 {
+  height: 500px;
+  background-image: url("https://m.media-amazon.com/images/I/71szSvIMZ0L._SX3000_.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* margin-top: 10px; */
+}
+
+#add1 a button {
+  position: absolute;
+  top: 50%;
+  left: 26.5%;
+  background-color: #dca743;
+  color: white;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#add2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #191b21;
+  height: 50px;
+  margin: 5px 0px;
+}
+
+#add2 h1 {
+  color: #dca743;
+  padding: 0px 60px;
+}
+
+#add2 h1 span {
+  color: white;
+}
+
+#add2 a button,
+#add1 a button,
+#add3 a button,
+#add4 a button,
+#txt2 a button {
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #dca743;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#add2 a button:hover,
+#add1 a button:hover,
+#add3 a button:hover,
+#add4 a button:hover,
+#txt2 a button:hover {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+#add3 {
+  height: fit-content;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#add3 > div:nth-child(1) {
+  height: 450px;
+  background-image: url("https://m.media-amazon.com/images/S/pv-target-images/5c5beef4ef377fc24210161275046979b2ad9c07fee1db17499caccbe45a8f52._AC_SL792_.jpg");
+  background-repeat: no-repeat;
+}
+
+#add3 > div:nth-child(2) {
+  height: 450px;
+}
+#add3 > div h1 {
+  margin: 45% 0% 0% 5%;
+  color: white;
+}
+#add3 > div h3 {
+  margin: 0% 0% 0% 5%;
+  color: white;
+}
+
+#collections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+#collections img {
+  width: 100%;
+}
+#collections a {
+  text-decoration: none;
+  color: rgb(10, 137, 223);
+  font-size: small;
+}
+
+#smart-brands {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  padding: 5px;
+}
+
+#add4 {
+  height: 300px;
+  background-image: url("https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/2023/HomeMela/HSMMay/Customization-Banner-1500x300.jpg");
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* text-align: lef; */
+  margin-top: 5px;
+}
+#add4 img {
+  margin-left: 55%;
+  margin-top: 2%;
+}
+#add4 a button {
+  margin-left: 72%;
+  margin-top: 1%;
+}
+
+/* text */
+.txt h1 {
+  /* text-align: center; */
+  color: #081f3f;
+  /* margin: 25px 0px 0px 0px; */
+  /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", */
+    /* "Lucida Sans", Arial, sans-serif; */
+    padding-left: 70px;
+}
+
+/* SLIDER 01 */
+
+.slider1 {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.slider1 > div {
+  width: 100%;
+}
+
+.slider1 .swiper > div:nth-child(2) {
+  width: 95%;
+  margin: auto;
+}
+
+.slider1 .swiper-slide {
+  display: flex;
+}
+
+.slider1 .swiper-slide > div {
+  width: 21%;
+  margin: 20px 0px 0px 30px;
+}
+
+.slider1 .swiper-slide > div:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.slider1 .swiper-slide > div > img {
+  width: 90%;
+  margin-left: 15px;
+}
+
+.slider1 .swiper .swiper-wrapper {
+  width: 100%;
+}
+
+.swiper-slide > div > div:nth-child(2) {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.swiper-slide > div > div:nth-child(2) > h4 {
+  color: #081f3f;
+}
+
+/*  ADDS 2.0 */
+
+#add {
+  height: fit-content;
+  display: flex;
+  margin: 50px 0px 0px 0px;
+}
+#add > div:nth-child(1) {
+  width: 50%;
+  background-image: url("https://assets.basspro.com/image/upload/c_scale,f_auto,q_auto,w_930/v1678485795/DigitalCreative/2023/Campaigns/wk09-3-9/Homepage/tracker-left.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#add > div:nth-child(2) {
+  width: 50%;
+  background-image: url("https://assets.basspro.com/image/upload/c_scale,f_auto,q_auto,w_930/v1678485795/DigitalCreative/2023/Campaigns/wk09-3-9/Homepage/tracker-right.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#add > div > img {
+  margin: 22% 0px 0px 2%;
+  width: 30%;
+}
+
+/* SHOP BY CATEGORY */
+
+#shopByCategory {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+#shopByCategory img {
+  width: 100%;
+}
+
+#shopByCategory > div {
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+#shopByCategory > div > div {
+  width: 100%;
+}
+
+#shopByCategory h3 {
+  margin: 10px 0px;
+  color: #213629;
+}
+
+/* txt box */
+#txt2 {
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  background-color: #081f3f;
+  color: white;
+  padding: 20px 0% 15px 13%;
+  text-align: center;
+}
+#txt2 span {
+  color: #dca743;
+  border-right: 2px solid white;
+  padding-right: 25px;
+  margin-right: 25px;
+}
+
+#txt2 div {
+  text-align: left;
+  margin-right: 8%;
+}
+
+/* top brands */
+#topBrands {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 40px;
+  margin-top: 10px;
+}
+#topBrands img {
+  width: 100%;
+}
+
+/* <!-- *********************SLIDER WITH 2 IMAGES******************************* --> */
+.container2 > .swiper > .swiper-wrapper > .swiper-slide {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  gap: 10px;
+  padding-left: 9%;
+}
+
+.container2 > .swiper > .swiper-wrapper > .swiper-slide > div {
+  width: 45%;
+}
+
+.container2
+  > .swiper
+  > .swiper-wrapper
+  > .swiper-slide
+  > div:nth-child(1)
+  > img {
+  width: 100%;
+}
+
+.container2
+  > .swiper
+  > .swiper-wrapper
+  > .swiper-slide
+  > div:nth-child(2)
+  > img {
+  width: 100%;
+}
+
+/* *********************** TRENDING BRANDS ********************** */
+
+.container3 {
+  /* border: 1px solid red; */
+  height: 340px;
+  margin-top: 30px;
+}
+
+.container3 > div {
+  /* border: 1px solid red; */
+  display: flex;
+  width: 95%;
+  margin: auto;
+}
+
+.container3 > div > div {
+  width: 20%;
+}
+
+.container3 > div > div > img {
+  width: 100%;
+}
+
+.container3 > div > div > img:hover {
+  width: 105%;
+  cursor: pointer;
+}
+
+/* <!-- ****************** SLIDER WITH 6 IMAGES  ****************************--> */
+
+.container4 {
+  /* border: 1px solid red; */
+  height: 310px;
+  width: 100%;
+  margin: auto;
+  align-items: center;
+  margin-top: -80px;
+}
+
+.container4 > h2 {
+  /* border: 1px solid navy; */
+  /* padding: 0px 40px; */
+  margin-bottom: 10px;
+}
+
+.container4 > .swiper {
+  /* border: 1px solid navy; */
+  width: 100%;
+  margin: auto;
+}
+
+.container4 > .swiper > .swiper-wrapper {
+  /* border: 1px solid greenyellow; */
+  width: 89%;
+  margin: auto;
+}
+
+.container4 > .swiper > .swiper-wrapper > .swiper-slide {
+  /* border: 1px solid green; */
+  width: 90%;
+  gap: 10px;
+  margin: auto;
+  display: flex;
+}
+
+/* .container4>.swiper2>.swiper-wrapper>.swiper-slide>div{
+  border: 1px solid blue;
+} */
+.container4 > .swiper > .swiper-wrapper > .swiper-slide > div > img:hover {
+  width: 103%;
+  cursor: pointer;
+}
+
+.container4 > .swiper > div > img {
+  width: 100%;
+}
+
+/* ********************** CONTAINER5 PRODUCTS **************************** */
+
+.container5 {
+  /* border: 1px solid red; */
+  width: 100%;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.container5 > h2 {
+  /* border: 1px solid navy; */
+  margin-top: 40px;
+  padding: 0px 40px;
+  margin-bottom: 25px;
+}
+
+.container5 > #cont5-products {
+  /* border: 1px solid green; */
+  width: 95%;
+  margin: auto;
+  display: grid;
+  gap: 10px;
+  grid-auto-flow: column;
+  grid-auto-columns: 13%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+}
+
+.container5 > #cont5-products > div {
+  border: 1px solid rgb(171, 169, 169);
+  display: grid;
+  gap: 5px;
+  /* grid-template-rows: min-content; */
+  padding: 10px;
+  /* background: gray; */
+  border-radius: 5px;
+  /* aspect-ratio: 16 / 9; */
+  /* object-fit: cover; */
+}
+
+.container5 > #cont5-products > div > img {
+  width: 100%;
+}
+
+.container5 > #cont5-products > div > button {
+  min-height: 30px;
+  background-color: #081f3f;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+}
+
+.container5 > #cont5-products > div > p:nth-child(2) {
+  font-weight: bold;
+  font-size: 12px;
+  margin: 5px 0px;
+}
+
+.container5 > #cont5-products > div > p:nth-child(3) {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.container5 > #cont5-products > div > s:nth-child(4) {
+  font-size: 14px;
+}
