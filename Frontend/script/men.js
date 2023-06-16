@@ -15,7 +15,7 @@ function fetchdata(queryParamString = null) {
 }
 
 window.addEventListener("load", () => {
-    fetchdata();
+    fetchdata(`?gender=male`);
 })
 
 
@@ -74,7 +74,7 @@ function productDetails(id) {
         }).catch((err) => {
             console.log(err)
         })
-
+    return data;
     window.location.href = "#"    
 }
 //  add to cart function 

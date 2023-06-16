@@ -20,8 +20,8 @@ productRoutes.get("/", async (req, res) => {
         if(req.query.title) {
             filter.title = req.query.title;
         }
-        if(req.query.gender) {
-            filter.title = req.query.gender;
+        if (req.query.gender && (req.query.gender === 'male' || req.query.gender === 'female')) {
+            filter.gender = req.query.gender;
         }
         if(req.query.arrival) {
             filter.arrival = {$gte: req.query.arrival};
@@ -29,8 +29,14 @@ productRoutes.get("/", async (req, res) => {
         if(req.query.rating) {
             filter.rating = { $gte: req.query.rating };
         }
-        if(req.query.search) {
-            filter.title = { $regex: req.query.search, $options: 'i' };
+        if (req.query.search) {
+            const searchRegex = new RegExp(req.query.search, 'i');
+            filter.$or = [
+                { title: searchRegex },
+                { category: searchRegex },
+                { brand: searchRegex}
+                // Add more fields to search from if needed
+            ];
         }
         const products = await ProductModel.find(filter).sort({ [sort]: sortOrder }).skip(skipIndex).limit(limit);
         return res.send(products)
