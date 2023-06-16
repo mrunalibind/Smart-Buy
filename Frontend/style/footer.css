@@ -2,18 +2,22 @@
     margin: 0px;
     padding: 0px;
 }
+section a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: large;
+}
 .top{
-    
     height: 55px;
     justify-content: center;
     align-items: center;
     padding-top: 15px;
-    color: white;
     text-align: center;
-    background-color: rgb(75, 76, 99);
+    background-color: #232f3e;
 }
 footer{
-    background-color: rgb(46, 47, 76);
+    background-color:#181b21;
 }
 #flex{
     color: white;

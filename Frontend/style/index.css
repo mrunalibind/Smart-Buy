@@ -135,8 +135,8 @@
   color: #081f3f;
   /* margin: 25px 0px 0px 0px; */
   /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", */
-    /* "Lucida Sans", Arial, sans-serif; */
-    padding-left: 70px;
+  /* "Lucida Sans", Arial, sans-serif; */
+  padding-left: 70px;
 }
 
 /* SLIDER 01 */
@@ -196,9 +196,12 @@
 /*  ADDS 2.0 */
 
 #add {
+  /* border: 1px solid red; */
+  text-align: center;
   height: fit-content;
   display: flex;
-  margin: 50px 0px 0px 0px;
+  width: 95%;
+  margin: auto;
 }
 #add > div:nth-child(1) {
   width: 50%;
@@ -214,7 +217,7 @@
 }
 #add > div > img {
   margin: 22% 0px 0px 2%;
-  width: 30%;
+  width: 34%;
 }
 
 /* SHOP BY CATEGORY */
@@ -346,7 +349,7 @@
 .container4 {
   /* border: 1px solid red; */
   height: 310px;
-  width: 100%;
+  width: 95%;
   margin: auto;
   align-items: center;
   margin-top: -80px;
@@ -366,7 +369,7 @@
 
 .container4 > .swiper > .swiper-wrapper {
   /* border: 1px solid greenyellow; */
-  width: 89%;
+  width: 93%;
   margin: auto;
 }
 
@@ -394,7 +397,7 @@
 
 .container5 {
   /* border: 1px solid red; */
-  width: 100%;
+  width: 95%;
   margin: auto;
   margin-bottom: 10px;
 }
@@ -408,7 +411,7 @@
 
 .container5 > #cont5-products {
   /* border: 1px solid green; */
-  width: 95%;
+  width: 100%;
   margin: auto;
   display: grid;
   gap: 10px;

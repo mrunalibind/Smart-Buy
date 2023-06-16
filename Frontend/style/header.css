@@ -129,7 +129,7 @@ header > div:nth-child(1) > div:nth-child(1) a {
   border: none;
   outline: none;
   width: 7%;
-  background-color: #e5e5e5;
+  background-color: #ffb744;
 }
 
 #nav1 > div:nth-child(3) {
@@ -160,12 +160,12 @@ header > div:nth-child(1) > div:nth-child(1) a {
 
 #nav1 > div:nth-child(3) > div:nth-child(2) span {
   font-weight: bold;
-  background-color: rgb(28, 74, 114);
+  background-color: #ff9d00;
   border-radius: 50%;
   font-size: small;
   position: absolute;
   padding: 0px 5px;
-  color: white;
+  color: #030000;
 }
 
 /* nav 02 */
