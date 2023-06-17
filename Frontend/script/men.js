@@ -1,4 +1,6 @@
 let token = JSON.parse(localStorage.getItem("token"))
+let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
+const cartTotal = document.getElementById("cartTotal");
 let url = "https://fakestoreapi.com"
 
 function fetchdata(queryParamString = null) {
@@ -23,17 +25,20 @@ window.addEventListener("load", () => {
 let productContainer = document.getElementById('productContainer');
 
 function displayData(data) {
-let product_list = `<div class="product-list" >
-                ${data.map((item) =>
-    productMaker(item.title, item.image, item.category, item.gender, item.price, item.rating, item.review, item.id)
-).join("")}
+    const container = document.createElement('div');
+    container.classList.add('product-list'); // Add the "product-list" class to the container
 
-</div>`
-productContainer.innerHTML = product_list;
+    data.forEach(item => {
+        const productElement = productMaker(item.title, item.image, item.category, item.gender, item.price, item.rating, item.review, item.id);
+        container.appendChild(productElement);
+    });
+
+    productContainer.innerHTML = '';
+    productContainer.appendChild(container);
 }
 
 //  card 
-function productMaker(title, image, category, gender, price, rating, review, itemID) {
+function productMaker(title, image, category,brand, price, rating, review, itemID) {
     let best = "";
     let star = ""
 
@@ -47,7 +52,7 @@ function productMaker(title, image, category, gender, price, rating, review, ite
         star += `<span class="fa fa-star"></span>`
     }
 
-    let product = `<div class=product onclick=productDetails('${itemID}')>
+    let product = `<div class=product >
         ${best}
     <img class="product_img" src=${image} alt="">
     <h4 class="title">${title}</h4>
@@ -56,55 +61,69 @@ function productMaker(title, image, category, gender, price, rating, review, ite
 
     <p class="category"> Category : ${category}</p>
 
-    <p class="gender">Gender : ${gender}</p>
+    <p class="brand">Brand : ${brand}</p>
 
-    <p class="rating_count">Review : ${rating}</p>
-    <button class="add" id="add" onclick=addToCart('${itemID}')>Add to cart</button>
+    <button class="add" id="add">Add to cart</button>
         
     </div>`
-    return product;
-}
 
-function productDetails(id) {
-    fetch(`${url}/products/${id}`)
-        .then((res) => {
-            return res.json();
-        }).then((data) => {
-            console.log(data)
-        }).catch((err) => {
-            console.log(err)
-        })
-    return data;
-    window.location.href = "#"    
-}
-//  add to cart function 
-function addToCart(ID) {
-  // Check if user is logged in
-  const token = localStorage.getItem('token');
 
-    if (token) {
-        // User is logged in, make a POST request to /cart route
-        fetch(`${url}/cart/${ID}`, {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-        },
-        })
-        .then(response => {
-        if (response.ok) {
-            console.log('Item added to cart successfully.');
+    const productCard = document.createElement("div");
+    productCard.innerHTML = product;
+  
+    const addToCartButton = productCard.querySelector(".add");
+    addToCartButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const token = localStorage.getItem("token");
+      if (token) {
+        const obj = {
+          id: itemID,
+          image: image,
+          brand: brand,
+          price: price,
+          category: category,
+          title: title,
+          rating: rating,
+          review: review
+        };
+  
+        if (checkDuplicate(obj)) {
+          showAlert("Product already in the cart", "alert-error");
         } else {
-            console.log('Failed to add item to cart.');
+          cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
+          cartData.push({ ...obj, quantity: 1 });
+          localStorage.setItem("cart-data", JSON.stringify(cartData));
+          cartTotal.innerText = cartData.length;
+          showAlert("Product added to cart", "alert-success");
         }
-        })
-        .catch(error => {
-        console.log('Error:', error);
-        });
-    } else {
-        showAlert('Please login first.', "alert-error");
-        window.location.href = '#'; 
-    }  
+      } else {
+        showAlert("Please login first.", "alert-error");
+        setTimeout(() => {
+            window.location.href = "login.html";
+        }, 4000)
+      }
+    });
+  
+    productCard.addEventListener("click", () => {
+        localStorage.setItem('product', itemID)
+      window.location.href = "../html/individual.html";
+    });
+  
+    return productCard;
+    
+}
+
+
+
+//to check duplicate products
+
+function checkDuplicate(element) {
+    for (let i = 0; i < cartData.length; i++) {
+        if (cartData[i].id == element.id) {
+            return true;
+        }
+    }
+    return false;
 }
 
 
@@ -180,9 +199,9 @@ function filterData(product) {
 
             if (Price[i].checked) {
                 if (Price[i].value == 500) {
-                  filteredProducts = product.filter((element) => element.price <= 50);
+                  filteredProducts = product.filter((element) => element.price <= 500);
                 } else if (Price[i].value == 1000) {
-                  filteredProducts = product.filter((element) => element.price > 50 && element.price <= 100);
+                  filteredProducts = product.filter((element) => element.price > 500 && element.price <= 1000);
                 } else if (Price[i].value == 1500) {
                   filteredProducts = product.filter((element) => element.price > 1000 && element.price <= 1500);
                 } else if (Price[i].value == 2000) {
@@ -239,31 +258,49 @@ function filterData(product) {
 
 }
 
+   //  search functionality 
+
+   let searchBox = document.getElementById("search-box")
+   let searchBtn = document.getElementById("search-button")
 
 
-//alert
+   searchBox.addEventListener("keypress", searchData)
+   searchBtn.addEventListener("click", searchData)
 
-function showAlert(message, type) {
-    const alertContainer = document.createElement('div');
-    alertContainer.className = 'alert-container';
-  
-    const alertElement = document.createElement('div');
-    alertElement.className = `alert ${type}`;
-    
-    const alertMessage = document.createElement('span');
-    alertMessage.textContent = message;
-    
-    const alertClose = document.createElement('span');
-    alertClose.className = 'alert-close';
-    alertClose.innerHTML = '&times;';
-    alertClose.addEventListener('click', function() {
-      alertContainer.remove();
-    });
-    
-    alertElement.appendChild(alertMessage);
-    alertElement.appendChild(alertClose);
-    alertContainer.appendChild(alertElement);
-    
-    document.body.appendChild(alertContainer);
-  }
-  
+   let timeOut;
+   let count = 0;
+
+
+function searchData(event) {
+   if (event.key === "Enter") {
+       event.preventDefault();
+       searchBtn.click();
+       fetch(`${url}/products/?search=${searchBox.value}`)
+           .then((res) => {
+               return res.json();
+           }).then((data) => {
+               showData(data)
+               filterData(data)
+           }).catch((err) => {
+               // alert(`Nothing found. Please try something else !  `)
+               console.log(err)
+           })
+   }
+   else {
+       clearTimeout(timeOut)
+       timeOut = setTimeout(function () {
+           fetch(`${url}/products/?search=${searchBox.value}`)
+               .then((res) => {
+                   return res.json();
+               }).then((data) => {
+                   showData(data)
+                   filterData(data)
+               }).catch((err) => {
+                   // alert(`Nothing found. Please try something else !  `)
+                   console.log(err)
+               })
+       }, 1000);
+   }
+}
+
+
