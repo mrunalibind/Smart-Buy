@@ -1,3 +1,9 @@
+// *************************** UserName ****************************
+const user = document.getElementById("username");
+const name = localStorage.getItem("name") || "Login First";
+user.innerText = "Hello," + "\n" + name;
+
+// ******************************** Cross Button ************************************
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
 const body = document.querySelector("body");
