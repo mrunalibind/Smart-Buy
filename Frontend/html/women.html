@@ -8,6 +8,8 @@
     <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../style/women.css">
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/alert.css">
+    <link rel="stylesheet" href="../style/footer.css"> 
     <title>Womens Page</title>
 </head>
 
@@ -24,8 +26,8 @@
             <div>
                 <div>
                     <form id="searchBox">
-                        <input type="text" placeholder="Search Here">
-                        <button type="submit"><i class="fa fa-search"></i></button>
+                        <input type="text" id="search-box" placeholder="Search Here">
+                        <button type="submit"><i id ="search-button" class="fa fa-search"></i></button>
                     </form>
                 </div>
                 <div>
@@ -263,12 +265,12 @@
             </div>
 
             <div class="brand-box">
-                <p><input type="checkbox" value="All">All</p>
-                <p><input type="checkbox" value="Jockey">Jockey</p>
-                <p><input type="checkbox" value="Levis">Levis</p>
-                <p><input type="checkbox" value="Lee Cooper">Lee Cooper</p>
-                <p><input type="checkbox" value="Wrangler">Wrangler</p>
-                <p><input type="checkbox" value="">Levis</p>
+                <p><input type="checkbox" value="All"> All</p>
+                <p><input type="checkbox" value="Jockey"> Jockey</p>
+                <p><input type="checkbox" value="Levis"> Levis</p>
+                <p><input type="checkbox" value="Lee Cooper"> Lee Cooper</p>
+                <p><input type="checkbox" value="Wrangler"> Wrangler</p>
+                <p><input type="checkbox" value=""> Levis</p>
 
             </div>
 
@@ -277,11 +279,11 @@
                 <p> CATEGORY</p>
             </div>
             <div class="category-box">
-                <p><input type="checkbox" value="Tops">Tops</p>
-                <p><input type="checkbox" value="Dresses">Dresses</p>
-                <p><input type="checkbox" value="Kurta Sets">Kurta Sets</p>
-                <p><input type="checkbox" value="Jeans">Jeans</p>
-                <p><input type="checkbox" value="Sarees">Sarees</p>
+                <p><input type="checkbox" value="Tops"> Tops</p>
+                <p><input type="checkbox" value="Dresses"> Dresses</p>
+                <p><input type="checkbox" value="Kurta Sets"> Kurta Sets</p>
+                <p><input type="checkbox" value="Jeans"> Jeans</p>
+                <p><input type="checkbox" value="Sarees"> Sarees</p>
             </div>
 
 
@@ -291,11 +293,11 @@
             </div>
 
             <div class="material-box">
-                <p><input type="checkbox" value="Cotton">Cotton</p>
-                <p><input type="checkbox" value="Linen">Linen</p>
-                <p><input type="checkbox" value="Polyster">Polyster</p>
-                <p><input type="checkbox" value="Rayon">Rayon</p>
-                <p><input type="checkbox" value="Synthetic">Synthetic</p>
+                <p><input type="checkbox" value="Cotton"> Cotton</p>
+                <p><input type="checkbox" value="Linen"> Linen</p>
+                <p><input type="checkbox" value="Polyster"> Polyster</p>
+                <p><input type="checkbox" value="Rayon"> Rayon</p>
+                <p><input type="checkbox" value="Synthetic"> Synthetic</p>
             </div>
 
 
@@ -305,7 +307,7 @@
             </div>
 
             <div class="price-box">
-                <p><input type="checkbox" value="500">Under 500</p>
+                <p><input type="checkbox" value="500"> Under 500</p>
                 <p><input type="checkbox" value="1000"> ₹500 - ₹1000 </p>
                 <p><input type="checkbox" value="1500"> ₹1000 - ₹1500 </p>
                 <p><input type="checkbox" value="2000"> ₹1500 - ₹2000 </p>
@@ -320,13 +322,13 @@
             </div>
 
             <div class="rating-box">
-                <p><input type="checkbox" value="3"><i class="fa fa-star checked"></i><i
+                <p><input type="checkbox" value="3"> <i class="fa fa-star checked"></i><i
                         class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star"></i><i
                         class="fa fa-star"></i></p>
-                <p><input type="checkbox" value="4"><i class="fa fa-star checked"></i><i
+                <p><input type="checkbox" value="4"> <i class="fa fa-star checked"></i><i
                         class="fa fa-star checked"></i><i class="fa fa-star checked"><i class="fa fa-star checked"></i>
                     </i><i class="fa fa-star"></i></p>
-                <p><input type="checkbox" value="5"><i class="fa fa-star checked"></i><i
+                <p><input type="checkbox" value="5"> <i class="fa fa-star checked"></i><i
                         class="fa fa-star checked"></i><i class="fa fa-star checked"><i
                             class="fa fa-star checked"></i><i class="fa fa-star checked"></i>
                     </i></p>
@@ -342,15 +344,120 @@
 
 
     </div>
+        <!-- Footer Section  -->
+    <section>
+    <p class="top"><a href="./index.html">Back to top</a></p>
+    </section>
+    <footer>
+    <div id="flex">
+        <div>
+            <h4>Get to Know Us</h4>
+            <p>About Us</p>
+            <p>Careers</p>
+            <p>Press Releases</p>
+            <p>Amazon Science</p>
+        </div>
+        <div>
+            <h4>Connect with Us</h4>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>Instagram</p>
+        </div>
+        <div>
+            <h4>Make Money with Us</h4>
+            <p>Sell on Amazon</p>
+            <p>Sell under Amazon Accelerator</p>
+            <p>Protect and Build Your Brand</p>
+            <p>Amazon Global Selling</p>
+            <p>Become an Affiliate</p>
+            <p>Fulfilment by Amazon</p>
+            <p>Advertise Your Products</p>
+            <p>Amazon Pay on Merchants</p>
+        </div>
+        <div>
+            <h4>Let Us Help You</h4>
+            <p>COVID-19 and Amazon</p>
+            <p>Your Account</p>
+            <p>Returns Centre</p>
+            <p>100% Purchase Protection</p>
+            <p>SmartBuy App Download</p>
+            <p>Help</p>
+        </div>
+    </div>
+    <hr>
+    <br><br>
+    <div id="imgLan">
+        <div><img id="fotterLog" src="../Images/logo.png" alt=""></div>
+        <div><select name="" id="">
+                <option value="">🌐 English</option>
+                <option value="">Hindi</option>
+                <option value="">Marathi</option>
+                <option value="">Telgu</option>
+                <option value="">Kannada</option>
+            </select></div>
+    </div>
+    <div id="para">
+        <br>
+        <p>Australi Brazil Canada China France Germany Italy Japan Mexico Netherlands Poland Singapore Spain Turkey
+            United Arab Emirates United Kingdom United States</p>
+    </div>
+
+    <div id="foot2">
+        <div id="footer2">
+            <div>
+                <h5>AbeBooks</h5>
+                <p>Books, art</p>
+                <p>&collectibles</p>
+                
+                <h5>Shopbop</h5>
+                <p>Designer</p>
+                <p>Fashion Brands</p>
+            </div>
+            <div>
+                <h5>SmartBuy Web Services</h5>
+                <p>Scalable Cloud</p>
+                <p>Computing Services</p>
+                
+                <h5>ShopBuy Business</h5>
+                <p>Everything For</p>
+                <p>Your Business</p>
+            </div>
+            
+            <div>
+                <h5>Audible</h5>
+                <p>Download</p>
+                <p>Audio Books</p>
+                
+                <h5>Prime Now</h5>
+                <p>2-Hour Delivery</p>
+                <p>on Everyday Items</p>
+            </div>
+            <div>
+                <h5>DPReviews</h5>
+                <p>Digital</p>
+                <p>Photography</p>
+                
+                <h5>ShopBuy Prime Music</h5>
+                <p>100 million songs, ad-free</p>
+                <p>Over 15 million podcast episodes</p>
+            </div>
+            <div>
+                <h5>IMDb</h5>
+                <p>Movies, TV</p>
+                <p>& Celebrities</p>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    </footer>
+    
 
 </body>
 
 </html>
 <script src="../script/index.js"></script>
 <script src="../script/women.js"></script>
-<script>
-    let cartData = JSON.parse(localStorage.getItem("cart-data"));
+<script src="../script/alert.js"></script>
 
-    const cartTotal = document.getElementById("cartTotal");
-    cartTotal.innerText = cartData.length;
-</script>

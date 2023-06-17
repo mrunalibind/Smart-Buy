@@ -1,0 +1,154 @@
+main{
+    display: flex;
+    width: 70%;
+    margin: auto;
+    /* overflow: hidden; */
+    margin-top: 109px;
+    margin-bottom: 109px;
+    /* border: 1px solid red; */
+    justify-content: space-between;
+}
+.productdetails{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 50%;
+    gap: 7px;
+    background-color: #f7f8f8;
+    padding: 20px 0px 20px 20px;
+}
+.imagediv{
+    width: 40%;
+}
+
+.imagediv img {
+    width: 100%;
+    height: 350px
+}
+.productdetails h3:nth-child(1){
+    color: rgb(72, 168, 177);
+    font-size: 16px;
+    font-weight: 400;
+  }
+.productdetails h3:nth-child(2){
+  color: rgb(81, 80, 80);
+  font-size: 26px;
+}
+.offer{
+    width: 400px;
+    margin-top: 10px;
+    border: 1px dashed gray;
+    /* padding: 10px; */
+}
+.offer > p{
+    text-align: left;
+
+}
+#span{
+    text-decoration-line: line-through;
+}
+#priice{
+    font-size: 26px;
+}
+.offer > div{
+    display: flex;
+
+    border-top: 1px dashed black;
+    /* flex-direction: column; */
+}
+.left{
+    border-right: 1px dashed gray;
+    /* padding: 10px; */
+}
+.right{
+    text-align: center;
+}
+
+.selectcolo >div{
+    display: flex;
+    gap: 20px;
+}
+.selectcolo > p{
+    text-align: left;
+    margin-bottom: 5px;
+}
+.red,.blue,.yellow{
+    /* background-color: rgb(204, 0, 0); */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.red{
+    background-color: #930707;
+}
+
+.yellow{
+    background-color: #efe664;
+}
+
+.blue{
+    background-color: #5b8ed5;
+}
+
+.selectsize > div{
+    display: flex;
+    gap: 20px;
+    
+}
+.selectsize{
+    text-align: left;
+}
+.selectsize p{
+    margin-bottom: 10px;
+}
+.selectsize > div > div{
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.selectsize > div > div:hover{
+    background-color: #2F4254;
+    color: white;
+}
+.selectsize > div > div:active{
+    background-color: #2F4254;
+    color: white;
+}
+.addtocard,.wishlist{
+    /* border: 1px solid black; */
+    height: 40px;
+    cursor: pointer;
+    width: 300px;
+}
+.addtocard{
+    background-color: #fea50c;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+}
+.wishlist{
+    border: 1px solid #fea50c;
+    color: #ee9804;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+}
+
+.btns{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}

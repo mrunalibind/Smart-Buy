@@ -1,6 +1,9 @@
 let token = JSON.parse(localStorage.getItem("token"))
+let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
+const cartTotal = document.getElementById("cartTotal");
 let url = "https://fakestoreapi.com"
 
+//api call
 function fetchdata(queryParamString = null) {
     fetch(`${url}/products${queryParamString ? queryParamString : ""}`)
     .then((res) => {
@@ -15,7 +18,7 @@ function fetchdata(queryParamString = null) {
 }
 
 window.addEventListener("load", () => {
-    fetchdata();
+    fetchdata(`?gender=female`);
 })
 
 
@@ -23,17 +26,20 @@ window.addEventListener("load", () => {
 let productContainer = document.getElementById('productContainer');
 
 function displayData(data) {
-let product_list = `<div class="product-list" >
-                ${data.map((item) =>
-    productMaker(item.title, item.image, item.category, item.gender, item.price, item.rating, item.review, item.id)
-).join("")}
+    const container = document.createElement('div');
+    container.classList.add('product-list'); // Add the "product-list" class to the container
 
-</div>`
-productContainer.innerHTML = product_list;
+    data.forEach(item => {
+        const productElement = productMaker(item.title, item.image, item.category, item.gender, item.price, item.rating, item.review, item.id);
+        container.appendChild(productElement);
+    });
+
+    productContainer.innerHTML = '';
+    productContainer.appendChild(container);
 }
 
 //  card 
-function productMaker(title, image, category, gender, price, rating, review, itemID) {
+function productMaker(title, image, category,brand, price, rating, review, itemID) {
     let best = "";
     let star = ""
 
@@ -56,51 +62,65 @@ function productMaker(title, image, category, gender, price, rating, review, ite
 
     <p class="category"> Category : ${category}</p>
 
-    <p class="gender">Gender : ${gender}</p>
+    <p class="brand">Brand : ${brand}</p>
 
-    <p class="rating_count">Review : ${rating}</p>
-    <button class="add" id="add" onclick=addToCart('${itemID}')>Add to cart</button>
+    <button class="add" id="add">Add to cart</button>
         
     </div>`
-    return product;
 
+
+    const productCard = document.createElement("div");
+    productCard.innerHTML = product;
+  
+    const addToCartButton = productCard.querySelector(".add");
+    addToCartButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const token = localStorage.getItem("token") ;
+      if (token) {
+        const obj = {
+          id: itemID,
+          image: image,
+          brand: brand,
+          price: price,
+          category: category,
+          title: title,
+          rating: rating,
+          review: review
+        };
+  
+        if (checkDuplicate(obj)) {
+          showAlert("Product already in the cart", "alert-error");
+        } else {
+          cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
+          cartData.push({ ...obj, quantity: 1 });
+          localStorage.setItem("cart-data", JSON.stringify(cartData));
+          cartTotal.innerText = cartData.length;
+          showAlert("Product added to cart", "alert-success");
+        }
+      } else {
+        showAlert("Please login first.", "alert-error");
+        setTimeout(() => {
+            window.location.href = "../html/login.html";
+        }, 4000)
+      }
+    });
+  
+    productCard.addEventListener("click", () => {
+        localStorage.setItem('product', itemID)
+      window.location.href = "../html/cart.html";
+    });
+  
+    return productCard;
     
 }
 
-function productDetails(id) {
-    console.log(id)
-    localStorage.setItem('product', id)
-    // window.location.href = 'individual.html'
 
-}
 
-//  add to cart function 
-let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-
-function addToCart(ID) {
-    // Check if user is logged in
-    const token = localStorage.getItem('token') || true;
-  
-      if (token) {
-          // User is logged in, make a POST request to /cart route
-          const product = productDetails(ID);
-          console.log(product)
-          if(checkDuplicate(product)) {
-              showAlert('Product already in the cart', 'alert-error')
-          } else {
-              cartItems.push({ ...product, quantity: 1 })
-              localStorage.setItem('cartItems', JSON.stringify(cartItems));
-              showAlert('Product added to cart', 'alert-success')
-          }
-      } else {
-          showAlert('Please login first.', "alert-error");
-          window.location.href = '#'; 
-      }  
-  }
+//to check duplicate products
 
 function checkDuplicate(element) {
-    for (let i = 0; i < cartItems.length; i++) {
-        if (cartItems[i]._id == element._id) {
+    for (let i = 0; i < cartData.length; i++) {
+        if (cartData[i].id == element.id) {
             return true;
         }
     }
@@ -238,31 +258,49 @@ function filterData(product) {
 
 }
 
+    //  search functionality 
+
+    let searchBox = document.getElementById("search-box")
+    let searchBtn = document.getElementById("search-button")
 
 
-//alert
+    searchBox.addEventListener("keypress", searchData)
+    searchBtn.addEventListener("click", searchData)
 
-function showAlert(message, type) {
-    const alertContainer = document.createElement('div');
-    alertContainer.className = 'alert-container';
-  
-    const alertElement = document.createElement('div');
-    alertElement.className = `alert ${type}`;
-    
-    const alertMessage = document.createElement('span');
-    alertMessage.textContent = message;
-    
-    const alertClose = document.createElement('span');
-    alertClose.className = 'alert-close';
-    alertClose.innerHTML = '&times;';
-    alertClose.addEventListener('click', function() {
-      alertContainer.remove();
-    });
-    
-    alertElement.appendChild(alertMessage);
-    alertElement.appendChild(alertClose);
-    alertContainer.appendChild(alertElement);
-    
-    document.body.appendChild(alertContainer);
-  }
-  
+    let timeOut;
+    let count = 0;
+
+
+function searchData(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchBtn.click();
+        fetch(`${url}/products/?search=${searchBox.value}`)
+            .then((res) => {
+                return res.json();
+            }).then((data) => {
+                showData(data)
+                filterData(data)
+            }).catch((err) => {
+                // alert(`Nothing found. Please try something else !  `)
+                console.log(err)
+            })
+    }
+    else {
+        clearTimeout(timeOut)
+        timeOut = setTimeout(function () {
+            fetch(`${url}/products/?search=${searchBox.value}`)
+                .then((res) => {
+                    return res.json();
+                }).then((data) => {
+                    showData(data)
+                    filterData(data)
+                }).catch((err) => {
+                    // alert(`Nothing found. Please try something else !  `)
+                    console.log(err)
+                })
+        }, 1000);
+    }
+}
+
+
