@@ -66,7 +66,7 @@ function showData(data) {
       } else {
         cartData.push(element);
         localStorage.setItem("cart-data", JSON.stringify(cartData));
-        alert("Prodct successfully added to Cart.");
+        alert("Product successfully added to Cart.");
       }
     });
 

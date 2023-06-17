@@ -43,7 +43,6 @@
   .mainCartContainer > #cart-container > div > #imgdiv {
     width: 95%;
     margin: auto;
-    height: 260px;
     overflow: hidden;
   }
   
@@ -137,3 +136,11 @@
     color: white;
   }
   
+  @media screen and (max-width:800px) {
+    .mainCartContainer{
+      flex-direction: column;
+    }
+    .mainCartContainer > #cart-container{
+      grid-template-columns: repeat(2,1fr);
+    }
+  }

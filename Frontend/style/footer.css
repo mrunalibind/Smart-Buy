@@ -5,6 +5,7 @@ section a{
     font-size: large;
 }
 .top{
+    color: white;
     height: 55px;
     justify-content: center;
     align-items: center;
@@ -13,6 +14,7 @@ section a{
     background-color: #232f3e;
 }
 footer{
+    
     background-color:#181b21;
 }
 #flex{
