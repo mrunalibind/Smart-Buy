@@ -6,12 +6,18 @@
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 /* main navbar */
+#Navbar{
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+}
 #mainNavbar {
   position: sticky;
   background-color: #ffffff;
-  top: 0;
+  top: 0px;
   z-index: 10;
 }
+
 
 /* HEADER */
 
