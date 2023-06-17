@@ -10,17 +10,18 @@
     <div id="maindiv">
         <img src="../Images/WhatsApp Image 2023-06-13 at 5.53.02 PM.jpeg" alt="logo" id="logo">
         <div id="from">
-            <h2>Create Account</h2>
+           
             <form >
-                <label for="Your name">Your name</label><br>
-                <input type="text" id="name" class="input" placeholder="First and last name"><br>
                 <label for="Email">Email</label><br>
                 <input type="Email" id="Email" class="input" placeholder="Email"><br>
                 <label for="Password">Password</label><br>
                 <input type="Password"  id="Password" class="input" placeholder="Password"><br>
-                <button id="Signupbtn" onclick="onSignup()">Continue</button>
+                <button id="Signupbtn" onclick="onLogin()">Continue</button>
+                <button id="Signupbtn" > <img id="googleicon" src="../Images/icons8-google-48.png" alt="Google"></button>
+                <button id="Signupbtn" > <img id="googleicon" src="../Images/facebook.png" alt="Facebook"></button>
+
                 <p>
-                    Already have an account?<a href="./login.html"> Sign in</a> </p>
+                    Already have an account?<a href="./Signup.html"> SignUp</a> </p>
                     <p>By creating an account or logging in, you agree to <br> SmartBuy’s  Conditions of Use and Privacy Policy.</p>
             </form>
         </div>
@@ -31,6 +32,4 @@
     </div>
 </body>
 </html>
-<script src="../script/signup.js">
-    
-</script>
+<script src="../script/signup.js"></script>
