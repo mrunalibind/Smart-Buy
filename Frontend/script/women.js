@@ -15,7 +15,7 @@ function fetchdata(queryParamString = null) {
 }
 
 window.addEventListener("load", () => {
-    fetchdata(`?gender=male`);
+    fetchdata();
 })
 
 
@@ -63,50 +63,49 @@ function productMaker(title, image, category, gender, price, rating, review, ite
         
     </div>`
     return product;
+
+    
 }
 
 function productDetails(id) {
-    fetch(`${url}/products/${id}`)
-        .then((res) => {
-            return res.json();
-        }).then((data) => {
-            console.log(data)
-        }).catch((err) => {
-            console.log(err)
-        })
-    return data;
-    window.location.href = "#"    
+    console.log(id)
+    localStorage.setItem('product', id)
+    // window.location.href = 'individual.html'
+
 }
+
 //  add to cart function 
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
 function addToCart(ID) {
-  // Check if user is logged in
-  const token = localStorage.getItem('token');
+    // Check if user is logged in
+    const token = localStorage.getItem('token') || true;
+  
+      if (token) {
+          // User is logged in, make a POST request to /cart route
+          const product = productDetails(ID);
+          console.log(product)
+          if(checkDuplicate(product)) {
+              showAlert('Product already in the cart', 'alert-error')
+          } else {
+              cartItems.push({ ...product, quantity: 1 })
+              localStorage.setItem('cartItems', JSON.stringify(cartItems));
+              showAlert('Product added to cart', 'alert-success')
+          }
+      } else {
+          showAlert('Please login first.', "alert-error");
+          window.location.href = '#'; 
+      }  
+  }
 
-    if (token) {
-        // User is logged in, make a POST request to /cart route
-        fetch(`${url}/cart/${ID}`, {
-        method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json'
-        },
-        })
-        .then(response => {
-        if (response.ok) {
-            console.log('Item added to cart successfully.');
-        } else {
-            console.log('Failed to add item to cart.');
+function checkDuplicate(element) {
+    for (let i = 0; i < cartItems.length; i++) {
+        if (cartItems[i]._id == element._id) {
+            return true;
         }
-        })
-        .catch(error => {
-        console.log('Error:', error);
-        });
-    } else {
-        showAlert('Please login first.', "alert-error");
-        window.location.href = '#'; 
-    }  
+    }
+    return false;
 }
-
 
 
 // filter and sorting functionality
@@ -180,9 +179,9 @@ function filterData(product) {
 
             if (Price[i].checked) {
                 if (Price[i].value == 500) {
-                  filteredProducts = product.filter((element) => element.price <= 50);
+                  filteredProducts = product.filter((element) => element.price <= 500);
                 } else if (Price[i].value == 1000) {
-                  filteredProducts = product.filter((element) => element.price > 50 && element.price <= 100);
+                  filteredProducts = product.filter((element) => element.price > 500 && element.price <= 1000);
                 } else if (Price[i].value == 1500) {
                   filteredProducts = product.filter((element) => element.price > 1000 && element.price <= 1500);
                 } else if (Price[i].value == 2000) {

@@ -12,10 +12,10 @@ const productSchema = mongoose.Schema({
     image: { type: String, required: true },
 
     availability: { type: Boolean, default: true },
-    item_left: { type: Number, required: true },
+    item_left: { type: Number },
 
-    desc: { type: String, required: true },
-    arrival: { type: Date, require: true }
+    desc: { type: String },
+    arrival: { type: Date}
 }, {
     versionKey: false
 })
