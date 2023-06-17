@@ -245,9 +245,10 @@
                 <input type="Password" id="Password" class="input" placeholder="Password"><br>
                 <button id="Signupbtn" onclick="onSignup()">Continue</button>
                 <p>
-                    Already have an account?<a href=""> Sign in</a> </p>
-                <p>By creating an account or logging in, you agree to <br> SmartBuy’s Conditions of Use and Privacy
-                    Policy.</p>
+
+                    Already have an account?<a href="./login.html"> Sign in</a> </p>
+                    <p>By creating an account or logging in, you agree to <br> SmartBuy’s  Conditions of Use and Privacy Policy.</p>
+
             </form>
         </div>
     </div>
@@ -258,11 +259,17 @@
 </body>
 
 </html>
+
+<script src="../script/signup.js">
+    
+</script>
+
 <script>
     let cartData = JSON.parse(localStorage.getItem("cart-data"));
 
     const cartTotal = document.getElementById("cartTotal");
     cartTotal.innerText = cartData.length;
 </script>
-<script src="../script/signup.js"></script>
+
 <script src="../script/index.js"></script>
+

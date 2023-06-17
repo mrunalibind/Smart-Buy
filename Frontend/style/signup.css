@@ -35,31 +35,40 @@ body {
   border-color: rgb(247, 104, 52);
 }
 
-#Signupbtn {
-  width: 400px;
-  height: 30px;
-  padding: 5px;
-  font-size: 20px;
-  border-color: rgb(247, 104, 52);
-  border-radius: 5px;
-  margin-left: 5px;
-  margin-top: 10px;
-  text-align: center;
+
+#Signupbtn{
+    width: 400px;
+    height: 30px;
+    padding: 5px;
+    font-size: 20px;
+    border-color: rgb(247, 104, 52);
+    border-radius: 5px; 
+    margin-left: 5px;
+    margin-top: 10px;
+    text-align: center;
+   
 }
-#maindiv p {
-  margin-top: 30px;
+p{
+    margin-top: 30px;
 }
-#maindiv a {
-  text-decoration: none;
-  color: rgb(247, 104, 52);
+a{
+    text-decoration: none;
+    color: rgb(247, 104, 52);
 }
-#Conditions {
-  width: auto;
-  height: 50px;
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  color: rgb(247, 104, 52);
+#Conditions{
+    width: auto;
+    height: 50px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: rgb(247, 104, 52) ;
 }
-#Signupbtn:hover {
-  background-color: white;
+#Signupbtn:hover{
+ background-color: white;
 }
+#googleicon{
+    width: 30px;
+    margin-top: -6px;
+}
+
+
+
