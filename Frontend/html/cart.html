@@ -3,15 +3,16 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
-    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../style/signup.css">
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/cart.css">
+    <link rel="stylesheet" href="../style/footer.css">
+    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
+    <title>Cart Page</title>
 </head>
 
 <body>
-
     <!-- Main Navbar -->
     <div id="mainNavbar">
         <!-- Nav 1 : Logo and Search Bar and Login and Cart -->
@@ -162,7 +163,7 @@
                     <li class="nav-item">
                         <a href="#">
                             <details>
-                                <summary class="nav-link"><a href="./grocery.html">Grocery</a></summary>
+                                <summary class="nav-link">Toys, Baby Products, Kids' Fashion</summary>
                             </details>
                         </a>
                     </li>
@@ -190,23 +191,26 @@
                     <div id="menu-bottom">
                         <h3>CONTACT US</h3>
                         <br>
-                        <p class="help">WhatsApp us : <a href="#">70003
+                        <p class="help">WhatsApp us : <a
+                                href="https://api.whatsapp.com/send/?phone=917000370003&text=Hi&type=phone_number&app_absent=0">70003
                                 70003</a></p>
                         <br>
                         <p class="help">Call Us : <a href="#">1800 890 1222</a></p>
                         <p class="help">8:00 AM to 8:00 PM, 365 days</p>
                         <br>
                         <p class="help">Please note that you are accessing the BETA Version of <a
-                                href="#">www.smartbuy.com</a>
+                                href="#">www.jiomart.com</a>
                         </p>
                         <p class="help">Should you encounter any bugs, glitches, lack of functionality, delayed
                             deliveries,
                             billing errors or other problems on the beta website, please email us on
-                            <a href="#">cs@smartbuy.com</a>
+                            <a href="#">cs@jiomart.com</a>
                         </p>
                         <h3>DOWNLOAD APP</h3>
-                        <a href="#"><img src="../Images/getFromPlatStore.PNG" alt="err"></a>
-                        <a href="#"><img src="../Images/getFromApple.PNG" alt="err"></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.jpl.jiomart"><img
+                                src="../Images/getFromPlatStore.PNG" alt="err"></a>
+                        <a href="https://apps.apple.com/in/app/jiomart/id1522085683"><img
+                                src="../Images/getFromApple.PNG" alt="err"></a>
                     </div>
 
 
@@ -232,37 +236,44 @@
             </div>
         </div>
     </div>
+    <!-- *********** PRODUCTS ************* -->
+    <div id="note">
+        <h1>SHOPPING CART</h1>
+        <p>On <span>₹1000.00</span> get <span>FREE</span> Shiping</p>
+    </div>
 
-    <div id="maindiv">
-        <div id="from">
-            <h2>Create Account</h2>
-            <form>
-                <label for="Your name">Your name</label><br>
-                <input type="text" id="name" class="input" placeholder="First and last name"><br>
-                <label for="Email">Email</label><br>
-                <input type="Email" id="Email" class="input" placeholder="Email"><br>
-                <label for="Password">Password</label><br>
-                <input type="Password" id="Password" class="input" placeholder="Password"><br>
-                <button id="Signupbtn" onclick="onSignup()">Continue</button>
-                <p>
-                    Already have an account?<a href=""> Sign in</a> </p>
-                <p>By creating an account or logging in, you agree to <br> SmartBuy’s Conditions of Use and Privacy
-                    Policy.</p>
-            </form>
+    <div class="mainCartContainer">
+        <!-- products -->
+        <div id="cart-container"></div>
+        <!-- payment -->
+        <div id="cartdiv2">
+            <div>
+                <h3>CHECKOUT BLOCK</h3>
+            </div>
+            <div>
+                <div id="subtotaldiv">
+                    <h4>Subtotal: </h4>
+                    <span id="subtotal">0</span>
+                </div>
+                <div>
+                    <h4>Estimated total:</h4>
+                    <span id="estimated">5</span>
+                </div>
+            </div>
+            <div>
+                <a href="#"><button id="Checkout"> Checkout </button></a>
+            </div>
         </div>
     </div>
-    <div id="Conditions">
-        <p> Conditions of Use Privacy Notice Help <br>
-            © 1996-2023, SmartBuy.com, Inc. or its affiliates</p>
-    </div>
+
 </body>
 
 </html>
+<script src="../script/cart.js"></script>
+<script src="../script/index.js"></script>
 <script>
     let cartData = JSON.parse(localStorage.getItem("cart-data"));
 
     const cartTotal = document.getElementById("cartTotal");
     cartTotal.innerText = cartData.length;
 </script>
-<script src="../script/signup.js"></script>
-<script src="../script/index.js"></script>
