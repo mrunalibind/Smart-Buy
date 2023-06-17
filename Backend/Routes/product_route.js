@@ -1,10 +1,8 @@
 const express = require("express");
-const jwt = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
 
 const productRoutes = express.Router();
 
-const { ProductModel } = require("../models/product.model");
+const { ProductModel } = require("../Models/product_model");
 
 //  search and sort functionality 
 productRoutes.get("/", async (req, res) => {
@@ -41,3 +39,7 @@ productRoutes.get("/:id", async (req, res) => {
     }
 
 })
+
+productRoutes.post()
+
+module.exports = {productRoutes}
