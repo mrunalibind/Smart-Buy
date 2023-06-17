@@ -20,7 +20,7 @@ productRoutes.get("/", async (req, res) => {
         if(req.query.title) {
             filter.title = req.query.title;
         }
-        if (req.query.gender && (req.query.gender === 'male' || req.query.gender === 'female')) {
+        if (req.query.gender && (req.query.gender === 'Male' || req.query.gender === 'Female')) {
             filter.gender = req.query.gender;
         }
         if(req.query.arrival) {
@@ -47,7 +47,7 @@ productRoutes.get("/", async (req, res) => {
 })
 
 // get product by id
-productRoutes.get("/:id", async (req, res) => {
+productRoutes.get("/id", async (req, res) => {
     product = await ProductModel.findById({ _id: req.params.id })
     if(product){
         res.send(product);
