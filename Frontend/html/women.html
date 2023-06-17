@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style/women.css">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/alert.css">
+    <link rel="stylesheet" href="../style/footer.css"> 
+    <title>Womens Page</title>
+</head>
+
+<body>
+    <!-- Main Navbar -->
+    <div id="mainNavbar">
+        <!-- Nav 1 : Logo and Search Bar and Login and Cart -->
+        <div id="nav1">
+            <!-- 1 Logo -->
+            <div>
+                <a href="./index.html"><img src="../Images/logo.png" alt=""></a>
+            </div>
+            <!-- 2 Search -->
+            <div>
+                <div>
+                    <form id="searchBox">
+                        <input type="text" id="search-box" placeholder="Search Here">
+                        <button type="submit"><i id ="search-button" class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div>
+                    <p id="username"></p>
+                </div>
+            </div>
+
+            <!-- 3 Profile and Cart -->
+            <div>
+                <div>
+                    <a href="./Signup.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="./cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a><span id="cartTotal">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- nav02 -->
+        <div id="nav02">
+            <div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="nav-menu">
+                    <div id="menu-top">
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                            <p>&nbsp;&nbsp;Hello, <span id="username">username</span></p>
+                            <i id="close" class="fa-solid fa-xmark fa-xl"></i>
+                        </div>
+                        <div>
+                            <a href="#"><button>Account</button></a>
+                            <a href="#"><button>Orders</button></a>
+                        </div>
+                    </div>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Best Sellers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">New Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Movers and Shakers</a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Digital Content And Devices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Echo & Alexa</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Fire TV</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Kindle E-Readers & eBooks</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Audible Audiobooks</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Smart Buy Prime Video</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Smart Buy Prime Music</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Shop By Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Mobiles, Computers</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">TV,Appliances, Electronics</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link"><a href="./man.html">Men's Fashion</a></summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link"><a href="./women.html">Women's Fashion</a></summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link"><a href="./grocery.html">Grocery</a></summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Movies, Music & Video Games</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Help & Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Your Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Customer Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sign Out</a>
+                    </li>
+                    <hr>
+                    <div id="menu-bottom">
+                        <h3>CONTACT US</h3>
+                        <br>
+                        <p class="help">WhatsApp us : <a href="#">70003
+                                70003</a></p>
+                        <br>
+                        <p class="help">Call Us : <a href="#">1800 890 1222</a></p>
+                        <p class="help">8:00 AM to 8:00 PM, 365 days</p>
+                        <br>
+                        <p class="help">Please note that you are accessing the BETA Version of <a
+                                href="#">www.smartbuy.com</a>
+                        </p>
+                        <p class="help">Should you encounter any bugs, glitches, lack of functionality, delayed
+                            deliveries,
+                            billing errors or other problems on the beta website, please email us on
+                            <a href="#">cs@smartbuy.com</a>
+                        </p>
+                        <h3>DOWNLOAD APP</h3>
+                        <a href="#"><img src="../Images/getFromPlatStore.PNG" alt="err"></a>
+                        <a href="#"><img src="../Images/getFromApple.PNG" alt="err"></a>
+                    </div>
+
+
+                </ul>
+            </div> <span id="all">All</span>
+            <a href="#">Fresh</a>
+            <a href="#">Today's Deals</a>
+            <a href="#">Amazon miniTV</a>
+            <a href="#">Sell</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Buy Again</a>
+            <a href="#">Baby</a>
+            <a href="#">Smart Buy Business</a>
+            <a href="#">Browsing History</a>
+            <a href="#">Grocery & Gourment Foods</a>
+
+            <div class="joinPrime">
+                <p>JEE KARDA</p>
+                <div>
+                    <p>Join Prime Now</p>
+                    <p>*Redirects to </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page -->
+    <div id="sort-bar">
+        <p><span id="totalItem"></span> results for <strong>"women's clothing"</strong></p>
+        <div id="bar">
+            <span>Sort By : </span>
+            <select name="sort" id="sort">
+                <option value="">Featured</option>
+                <option value="priceLowToHigh">Price: Low to High</option>
+                <option value="priceHighToLow">Price: High to Low</option>
+                <option value="top">Popularity </option>
+            </select>
+        </div>
+    </div>
+
+    <div id="container">
+
+
+        <div class="filter-div">
+
+            <div id="refine">
+                <p> FILTER BY</p>
+            </div>
+
+            <div id="brand">
+                <p> BRAND</p>
+            </div>
+
+            <div class="brand-box">
+                <p><input type="checkbox" value="All"> All</p>
+                <p><input type="checkbox" value="Jockey"> Jockey</p>
+                <p><input type="checkbox" value="Levis"> Levis</p>
+                <p><input type="checkbox" value="Lee Cooper"> Lee Cooper</p>
+                <p><input type="checkbox" value="Wrangler"> Wrangler</p>
+                <p><input type="checkbox" value=""> Levis</p>
+
+            </div>
+
+
+            <div id="category">
+                <p> CATEGORY</p>
+            </div>
+            <div class="category-box">
+                <p><input type="checkbox" value="Tops"> Tops</p>
+                <p><input type="checkbox" value="Dresses"> Dresses</p>
+                <p><input type="checkbox" value="Kurta Sets"> Kurta Sets</p>
+                <p><input type="checkbox" value="Jeans"> Jeans</p>
+                <p><input type="checkbox" value="Sarees"> Sarees</p>
+            </div>
+
+
+
+            <div id="material">
+                <p> MATERIAL</p>
+            </div>
+
+            <div class="material-box">
+                <p><input type="checkbox" value="Cotton"> Cotton</p>
+                <p><input type="checkbox" value="Linen"> Linen</p>
+                <p><input type="checkbox" value="Polyster"> Polyster</p>
+                <p><input type="checkbox" value="Rayon"> Rayon</p>
+                <p><input type="checkbox" value="Synthetic"> Synthetic</p>
+            </div>
+
+
+
+            <div id="price">
+                <p> PRICE</p>
+            </div>
+
+            <div class="price-box">
+                <p><input type="checkbox" value="500"> Under 500</p>
+                <p><input type="checkbox" value="1000"> ₹500 - ₹1000 </p>
+                <p><input type="checkbox" value="1500"> ₹1000 - ₹1500 </p>
+                <p><input type="checkbox" value="2000"> ₹1500 - ₹2000 </p>
+                <p><input type="checkbox" value="2100"> Over ₹2000</p>
+            </div>
+
+
+
+
+            <div id="rating">
+                <p> RATING</p>
+            </div>
+
+            <div class="rating-box">
+                <p><input type="checkbox" value="3"> <i class="fa fa-star checked"></i><i
+                        class="fa fa-star checked"></i><i class="fa fa-star checked"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star"></i></p>
+                <p><input type="checkbox" value="4"> <i class="fa fa-star checked"></i><i
+                        class="fa fa-star checked"></i><i class="fa fa-star checked"><i class="fa fa-star checked"></i>
+                    </i><i class="fa fa-star"></i></p>
+                <p><input type="checkbox" value="5"> <i class="fa fa-star checked"></i><i
+                        class="fa fa-star checked"></i><i class="fa fa-star checked"><i
+                            class="fa fa-star checked"></i><i class="fa fa-star checked"></i>
+                    </i></p>
+            </div>
+
+
+        </div>
+
+        <div id="productContainer">
+            <h3 id="warning">loading . . .</h3>
+
+        </div>
+
+
+    </div>
+        <!-- Footer Section  -->
+    <section>
+    <p class="top"><a href="./index.html">Back to top</a></p>
+    </section>
+    <footer>
+    <div id="flex">
+        <div>
+            <h4>Get to Know Us</h4>
+            <p>About Us</p>
+            <p>Careers</p>
+            <p>Press Releases</p>
+            <p>Amazon Science</p>
+        </div>
+        <div>
+            <h4>Connect with Us</h4>
+            <p>Facebook</p>
+            <p>Twitter</p>
+            <p>Instagram</p>
+        </div>
+        <div>
+            <h4>Make Money with Us</h4>
+            <p>Sell on Amazon</p>
+            <p>Sell under Amazon Accelerator</p>
+            <p>Protect and Build Your Brand</p>
+            <p>Amazon Global Selling</p>
+            <p>Become an Affiliate</p>
+            <p>Fulfilment by Amazon</p>
+            <p>Advertise Your Products</p>
+            <p>Amazon Pay on Merchants</p>
+        </div>
+        <div>
+            <h4>Let Us Help You</h4>
+            <p>COVID-19 and Amazon</p>
+            <p>Your Account</p>
+            <p>Returns Centre</p>
+            <p>100% Purchase Protection</p>
+            <p>SmartBuy App Download</p>
+            <p>Help</p>
+        </div>
+    </div>
+    <hr>
+    <br><br>
+    <div id="imgLan">
+        <div><img id="fotterLog" src="../Images/logo.png" alt=""></div>
+        <div><select name="" id="">
+                <option value="">🌐 English</option>
+                <option value="">Hindi</option>
+                <option value="">Marathi</option>
+                <option value="">Telgu</option>
+                <option value="">Kannada</option>
+            </select></div>
+    </div>
+    <div id="para">
+        <br>
+        <p>Australi Brazil Canada China France Germany Italy Japan Mexico Netherlands Poland Singapore Spain Turkey
+            United Arab Emirates United Kingdom United States</p>
+    </div>
+
+    <div id="foot2">
+        <div id="footer2">
+            <div>
+                <h5>AbeBooks</h5>
+                <p>Books, art</p>
+                <p>&collectibles</p>
+                
+                <h5>Shopbop</h5>
+                <p>Designer</p>
+                <p>Fashion Brands</p>
+            </div>
+            <div>
+                <h5>SmartBuy Web Services</h5>
+                <p>Scalable Cloud</p>
+                <p>Computing Services</p>
+                
+                <h5>ShopBuy Business</h5>
+                <p>Everything For</p>
+                <p>Your Business</p>
+            </div>
+            
+            <div>
+                <h5>Audible</h5>
+                <p>Download</p>
+                <p>Audio Books</p>
+                
+                <h5>Prime Now</h5>
+                <p>2-Hour Delivery</p>
+                <p>on Everyday Items</p>
+            </div>
+            <div>
+                <h5>DPReviews</h5>
+                <p>Digital</p>
+                <p>Photography</p>
+                
+                <h5>ShopBuy Prime Music</h5>
+                <p>100 million songs, ad-free</p>
+                <p>Over 15 million podcast episodes</p>
+            </div>
+            <div>
+                <h5>IMDb</h5>
+                <p>Movies, TV</p>
+                <p>& Celebrities</p>
+                
+            </div>
+        </div>
+        
+    </div>
+
+    </footer>
+    
+
+</body>
+
+</html>
+<script src="../script/index.js"></script>
+<script src="../script/women.js"></script>
+<script src="../script/alert.js"></script>
+

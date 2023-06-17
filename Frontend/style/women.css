@@ -97,6 +97,7 @@
 
 #productContainer {
     width: 85%;
+    /* display: none; */
 }
 
 .product-list {
@@ -125,7 +126,7 @@
     line-height: 19px;
     font-size: 16px;
     margin-top: 25px;
-    margin-bottom: 12px;    
+    margin-bottom: 12px;
 }
 .product p {
     font-size: 13px;
@@ -136,7 +137,6 @@
     padding-top: 4px;
     padding-bottom: 4px;
 }
-
 .product:hover {
     box-shadow:  rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;;
 }

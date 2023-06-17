@@ -1,0 +1,104 @@
+section a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: large;
+}
+.top{
+    color: white;
+    height: 55px;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    text-align: center;
+    background-color: #232f3e;
+}
+footer{
+    
+    background-color:#181b21;
+}
+#flex{
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+    padding: 50px 0px;
+    
+}
+#flex>div>h4{
+    margin-bottom: 20px;
+}
+#flex>div>p{
+    margin-bottom: 8px;
+}
+#flex>div>p:hover{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: underline;
+}
+#imgLan{
+    
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#fotterLog{
+    width: 200px;
+}
+#imgLan select{
+    width: 200px;
+    height: 40px;
+}
+#imgLan option{
+    width: 200px;
+    height: 40px;
+}
+#para{
+    word-spacing: 7px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 60%;
+    margin: auto;
+    color: white;
+}
+#foot2{
+    
+    color: white;
+    background-color: rgb(29, 30, 42);
+}
+#footer2{
+    margin-top: 20px;
+    padding-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+}
+#footer2>div h5{
+    margin-top: 15px;
+}
+#footer2>div p{
+    font-size: 12px;
+}
+#foot3 p{
+    font-size: 16px;
+    text-align: center;
+}
+@media screen and (max-width:600px) {
+    #footer2{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #imgLan{
+        flex-direction: column;
+        margin: auto;
+    }
+    #flex{
+        grid-template-columns: repeat(2,1fr);
+    }
+}

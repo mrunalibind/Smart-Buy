@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery</title>
+    <link rel="stylesheet" href="../style/header.css">
+    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- Main Navbar -->
+    <div id="mainNavbar">
+        <!-- Nav 1 : Logo and Search Bar and Login and Cart -->
+        <div id="nav1">
+            <!-- 1 Logo -->
+            <div>
+                <a href="./index.html"><img src="../Images/logo.png" alt=""></a>
+            </div>
+            <!-- 2 Search -->
+            <div>
+                <div>
+                    <form id="searchBox">
+                        <input type="text" placeholder="Search Here">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div>
+                    <p id="username"></p>
+                </div>
+            </div>
+
+            <!-- 3 Profile and Cart -->
+            <div>
+                <div>
+                    <a href="./Signup.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+                <div>
+                    <a href="./cart.html">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a><span id="cartTotal">0</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- nav02 -->
+        <div id="nav02">
+            <div>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="nav-menu">
+                    <div id="menu-top">
+                        <div>
+                            <i class="fa-solid fa-user"></i>
+                            <p>&nbsp;&nbsp;Hello, <span id="username">username</span></p>
+                            <i id="close" class="fa-solid fa-xmark fa-xl"></i>
+                        </div>
+                        <div>
+                            <a href="#"><button>Account</button></a>
+                            <a href="#"><button>Orders</button></a>
+                        </div>
+                    </div>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Trending</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Best Sellers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">New Releases</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Movers and Shakers</a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Digital Content And Devices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Echo & Alexa</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Fire TV</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Kindle E-Readers & eBooks</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Audible Audiobooks</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Smart Buy Prime Video</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Smart Buy Prime Music</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Shop By Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Mobiles, Computers</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">TV,Appliances, Electronics</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link"><a href="./man.html">Men's Fashion</a></summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link"><a href="./women.html">Women's Fashion</a></summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link"><a href="./grocery.html">Grocery</a></summary>
+                            </details>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">
+                            <details>
+                                <summary class="nav-link">Movies, Music & Video Games</summary>
+                            </details>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="nav-item">
+                        <a href="#" class="side-bold">Help & Settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Your Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Customer Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Sign Out</a>
+                    </li>
+                    <hr>
+                    <div id="menu-bottom">
+                        <h3>CONTACT US</h3>
+                        <br>
+                        <p class="help">WhatsApp us : <a href="#">70003
+                                70003</a></p>
+                        <br>
+                        <p class="help">Call Us : <a href="#">1800 890 1222</a></p>
+                        <p class="help">8:00 AM to 8:00 PM, 365 days</p>
+                        <br>
+                        <p class="help">Please note that you are accessing the BETA Version of <a
+                                href="#">www.smartbuy.com</a>
+                        </p>
+                        <p class="help">Should you encounter any bugs, glitches, lack of functionality, delayed
+                            deliveries,
+                            billing errors or other problems on the beta website, please email us on
+                            <a href="#">cs@smartbuy.com</a>
+                        </p>
+                        <h3>DOWNLOAD APP</h3>
+                        <a href="#"><img src="../Images/getFromPlatStore.PNG" alt="err"></a>
+                        <a href="#"><img src="../Images/getFromApple.PNG" alt="err"></a>
+                    </div>
+
+
+                </ul>
+            </div> <span id="all">All</span>
+            <a href="#">Fresh</a>
+            <a href="#">Today's Deals</a>
+            <a href="#">Amazon miniTV</a>
+            <a href="#">Sell</a>
+            <a href="#">Gift Cards</a>
+            <a href="#">Buy Again</a>
+            <a href="#">Baby</a>
+            <a href="#">Smart Buy Business</a>
+            <a href="#">Browsing History</a>
+            <a href="#">Grocery & Gourment Foods</a>
+
+            <div class="joinPrime">
+                <p>JEE KARDA</p>
+                <div>
+                    <p>Join Prime Now</p>
+                    <p>*Redirects to </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="../script/index.js"></script>
+<script>
+    let cartData = JSON.parse(localStorage.getItem("cart-data"));
+
+    const cartTotal = document.getElementById("cartTotal");
+    cartTotal.innerText = cartData.length;
+</script>

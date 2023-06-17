@@ -3,6 +3,7 @@ let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 const cartTotal = document.getElementById("cartTotal");
 let url = "https://fakestoreapi.com"
 
+//api call
 function fetchdata(queryParamString = null) {
     fetch(`${url}/products${queryParamString ? queryParamString : ""}`)
     .then((res) => {
@@ -17,7 +18,7 @@ function fetchdata(queryParamString = null) {
 }
 
 window.addEventListener("load", () => {
-    fetchdata(`?gender=male`);
+    fetchdata(`?gender=female`);
 })
 
 
@@ -52,7 +53,7 @@ function productMaker(title, image, category,brand, price, rating, review, itemI
         star += `<span class="fa fa-star"></span>`
     }
 
-    let product = `<div class=product >
+    let product = `<div class=product onclick=productDetails('${itemID}')>
         ${best}
     <img class="product_img" src=${image} alt="">
     <h4 class="title">${title}</h4>
@@ -74,7 +75,7 @@ function productMaker(title, image, category,brand, price, rating, review, itemI
     const addToCartButton = productCard.querySelector(".add");
     addToCartButton.addEventListener("click", (e) => {
       e.stopPropagation();
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("token") ;
       if (token) {
         const obj = {
           id: itemID,
@@ -99,14 +100,14 @@ function productMaker(title, image, category,brand, price, rating, review, itemI
       } else {
         showAlert("Please login first.", "alert-error");
         setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = "../html/login.html";
         }, 4000)
       }
     });
   
     productCard.addEventListener("click", () => {
         localStorage.setItem('product', itemID)
-      window.location.href = "../html/individual.html";
+      window.location.href = "../html/cart.html";
     });
   
     return productCard;
@@ -125,7 +126,6 @@ function checkDuplicate(element) {
     }
     return false;
 }
-
 
 
 // filter and sorting functionality
@@ -258,49 +258,49 @@ function filterData(product) {
 
 }
 
-   //  search functionality 
+    //  search functionality 
 
-   let searchBox = document.getElementById("search-box")
-   let searchBtn = document.getElementById("search-button")
+    let searchBox = document.getElementById("search-box")
+    let searchBtn = document.getElementById("search-button")
 
 
-   searchBox.addEventListener("keypress", searchData)
-   searchBtn.addEventListener("click", searchData)
+    searchBox.addEventListener("keypress", searchData)
+    searchBtn.addEventListener("click", searchData)
 
-   let timeOut;
-   let count = 0;
+    let timeOut;
+    let count = 0;
 
 
 function searchData(event) {
-   if (event.key === "Enter") {
-       event.preventDefault();
-       searchBtn.click();
-       fetch(`${url}/products/?search=${searchBox.value}`)
-           .then((res) => {
-               return res.json();
-           }).then((data) => {
-               showData(data)
-               filterData(data)
-           }).catch((err) => {
-               // alert(`Nothing found. Please try something else !  `)
-               console.log(err)
-           })
-   }
-   else {
-       clearTimeout(timeOut)
-       timeOut = setTimeout(function () {
-           fetch(`${url}/products/?search=${searchBox.value}`)
-               .then((res) => {
-                   return res.json();
-               }).then((data) => {
-                   showData(data)
-                   filterData(data)
-               }).catch((err) => {
-                   // alert(`Nothing found. Please try something else !  `)
-                   console.log(err)
-               })
-       }, 1000);
-   }
+    if (event.key === "Enter") {
+        event.preventDefault();
+        searchBtn.click();
+        fetch(`${url}/products/?search=${searchBox.value}`)
+            .then((res) => {
+                return res.json();
+            }).then((data) => {
+                showData(data)
+                filterData(data)
+            }).catch((err) => {
+                // alert(`Nothing found. Please try something else !  `)
+                console.log(err)
+            })
+    }
+    else {
+        clearTimeout(timeOut)
+        timeOut = setTimeout(function () {
+            fetch(`${url}/products/?search=${searchBox.value}`)
+                .then((res) => {
+                    return res.json();
+                }).then((data) => {
+                    showData(data)
+                    filterData(data)
+                }).catch((err) => {
+                    // alert(`Nothing found. Please try something else !  `)
+                    console.log(err)
+                })
+        }, 1000);
+    }
 }
 
 
