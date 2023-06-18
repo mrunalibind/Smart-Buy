@@ -247,6 +247,7 @@
                     Privacy Policy.</p>
                 <button id="Signupbtn" onclick="onSignup()">Sign Up</button>
                 <p class="temp">Already have an account?<a href="./login.html"> Log in</a> </p>
+
             </form>
         </div>
     </div>
@@ -256,11 +257,17 @@
 </body>
 
 </html>
+
+<script src="../script/signup.js">
+    
+</script>
+
 <script>
     let cartData = JSON.parse(localStorage.getItem("cart-data"));
 
     const cartTotal = document.getElementById("cartTotal");
     cartTotal.innerText = cartData.length;
 </script>
-<script src="../script/signup.js"></script>
+
 <script src="../script/index.js"></script>
+

@@ -19,6 +19,8 @@
     height: 29px;
     padding: 4px 20px 4px 0;
     border-radius: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #bar:hover {
     box-shadow: rgb(23, 171, 229);
@@ -42,7 +44,7 @@
 }
 
 #container {
-    width: 100%;
+    width: 90%;
     margin: auto;
     display: flex;
     background-color: rgb(255, 252, 249);
@@ -61,21 +63,25 @@
 #price,
 #category,
 #rating,
-#material {
+#material p{
 
     background-color: #faf7f7;
-    padding: 1px;
+    padding: 10px;
     font-weight: 600;
     /* margin-left: 3%; */
 
 }
 
-.brand-box,
-.price-box,
-.category-box,
-.material-box,
+.brand-box p,
+.price-box p,
+.category-box p,
+.material-box p,
 .rating-box p {
     margin-left: 3%;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+    margin-top: 8px;
 }
 
 #refine {
@@ -91,6 +97,7 @@
 
 #productContainer {
     width: 85%;
+    /* display: none; */
 }
 
 .product-list {
@@ -118,11 +125,18 @@
 .product h4 {
     line-height: 19px;
     font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 12px;
 }
 .product p {
     font-size: 13px;
+    margin-top: 14px;
+    margin-bottom: 12px;
 }
-
+.product h2 {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
 .product:hover {
     box-shadow:  rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;;
 }
@@ -167,49 +181,3 @@
     }
 }
 
-.alert-container {
-    position: fixed;
-    bottom: 10px;
-    left: 20%;
-    /* transform: translateX(-20%); */
-    z-index: 9999;
-    width: 80%;
-    /* top: 6% */
-  }
-  
-  .alert {
-    position: relative;
-    padding: 12px 20px;
-    margin-bottom: 16px;
-    border: 1px solid transparent;
-    border-radius: 4px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  
-  .alert-success {
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-    color: #155724;
-  }
-  
-  .alert-error {
-    background-color: #f8d7da;
-    border-color: #f5c6cb;
-    color: #721c24;
-  }
-  
-  .alert-close {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .alert-close:hover {
-    color: #721c24;
-  }
-  
-  

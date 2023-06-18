@@ -1,3 +1,4 @@
+
 let token = JSON.parse(localStorage.getItem("token"));
 let url = "https://fakestoreapi.com";
 

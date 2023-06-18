@@ -1,5 +1,12 @@
 let cartProducts = document.getElementById("cart-container");
 let cartData = JSON.parse(localStorage.getItem("cart-data"));
+
+// let cartItems=JSON.parse(localStorage.getItem("cartItems"));
+
+// cartData=[...cartData,...cartItems];
+// console.log(cartData);
+
+
 let shippingCharges = document.getElementById("shippingCharges");
 
 const cartTotal = document.getElementById("cartTotal");
@@ -11,7 +18,9 @@ if (cartData === null) {
 showData(cartData);
 
 function showData(data) {
-  let cartProducts = document.getElementById("cart-container");
+  
+  cartProducts.innerHTML=null;
+  console.log(data);
   data.forEach((element, index) => {
     let card = document.createElement("div");
 
@@ -54,7 +63,7 @@ function showData(data) {
       Quantity.innerText = i;
       element.quantity = Quantity.innerText;
       Quantity.innerText = element.quantity;
-      localStorage.setItem("cart-data", JSON.stringify(cartData));
+      localStorage.setItem("cart-data", JSON.stringify(data));
       //   showData(cartData);
       sum();
     });
@@ -63,17 +72,19 @@ function showData(data) {
         element.quantity--;
         i--;
         Quantity.innerText = element.quantity;
-        localStorage.setItem("cart-data", JSON.stringify(cartData));
+        localStorage.setItem("cart-data", JSON.stringify(data));
         // showData(cartData);
         sum();
       }
     });
 
     Delete.addEventListener("click", () => {
-      cartProducts.innerHTML = null;
-      cartData.splice(index, 1);
-      localStorage.setItem("cart-data", JSON.stringify(cartData));
-      showData(cartData);
+      
+      data.splice(index, 1);
+      localStorage.setItem("cart-data", JSON.stringify(data));
+      console.log("After Deletion",data);
+      showData(data);
+      alert("Product is deleted")
       sum();
     });
 
@@ -107,7 +118,7 @@ function sum() {
   }
   estimated1.innerText = `₹ ${sum + shippingCharges}`;
   x = sum + shippingCharges;
-
+localStorage.setItem("totalPrice",sum + shippingCharges)
   console.log(x);
 }
 sum();
