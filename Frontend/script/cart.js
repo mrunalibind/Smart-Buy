@@ -111,7 +111,7 @@ function sum() {
 
   total.innerText = `₹ ${sum}`;
 
-  if (sum >= 5000) {
+  if (sum >= 1000) {
     shippingCharges = 0;
   } else {
     shippingCharges = 25;

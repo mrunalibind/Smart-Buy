@@ -1,74 +1,65 @@
-body {
-  margin: 0%;
-  padding: 0%;
-  font-family: Arial, Helvetica, sans-serif;
-}
 #maindiv {
   /* border: 1px solid red; */
   width: 50%;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 70px;
   margin-bottom: 30px;
 }
 #from {
+  /* border: 1px solid red; */
   width: 60%;
   margin: auto;
-  padding: 10px;
-  height: 450px;
+  padding: 30px;
+  text-align: center;
+  /* height: 450px; */
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   border-radius: 5px;
 }
-#form h2 {
-  text-align: center;
+form{
+margin-top: 20px;
 }
-#logo {
-  width: 40%;
-  margin-left: 200px;
+form p {
+  font-size: small;
 }
-.input {
-  width: 400px;
-  height: 25px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+form a{
+  color: #0073ff;
+}
+form .temp{
+  margin-top: 10px;
+}
+form .terms{
+  margin-top: 20px;
+}
+#from .input {
+  width: 250px;
   border-radius: 5px;
-  border-color: rgb(247, 104, 52);
+  border: none;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 10px;
+  margin-top: 15px;
+}
+#Signupbtn {
+  width: 200px;
+  border: none;
+  outline: none;
+  background-color: #232f3e;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px 0px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
-
-#Signupbtn{
-    width: 400px;
-    height: 30px;
-    padding: 5px;
-    font-size: 20px;
-    border-color: rgb(247, 104, 52);
-    border-radius: 5px; 
-    margin-left: 5px;
-    margin-top: 10px;
-    text-align: center;
-   
+#conditions{
+  text-align: center;
+  background-color: #62738a;
+  /* border: 1px solid black; */
+  font-size: small;
+  padding: 15px;
+color: white;
+margin-top: 155px;
 }
-p{
-    margin-top: 30px;
-}
-a{
-    text-decoration: none;
-    color: rgb(247, 104, 52);
-}
-#Conditions{
-    width: auto;
-    height: 50px;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    color: rgb(247, 104, 52) ;
-}
-#Signupbtn:hover{
- background-color: white;
-}
-#googleicon{
-    width: 30px;
-    margin-top: -6px;
-}
-
-
 
