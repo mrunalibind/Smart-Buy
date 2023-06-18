@@ -18,6 +18,8 @@
   
   .col-75 {
     -ms-flex: 75%; /* IE10 */
+    /* border: 1px solid red; */
+    margin: 10px;
     flex: 75%;
   }
   
