@@ -23,4 +23,12 @@ Smart Buy is your premier online shopping destination, offering a wide array of 
 &nbsp;
 
 ## Pages
+![1](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/e9cf2aba-1044-481e-98ff-343a56b9dc25)
+![1 1](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/b51ee862-b797-4e8f-b7fa-09b313460d36)
+![2](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/e766a1d1-71e3-4099-9bf0-b1e028b2734d)
+![3](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/ddb57268-f1b4-432a-ab2b-ef6d7cb26e0e)
+![4](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/9a9d4ecc-a87a-453a-abf4-25ca15104f12)
+![5](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/8f563e67-b7b6-43f8-aa84-d1e78842ef43)
+![6](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/d7b42cab-4438-45c5-9ba8-a326d1876147)
+
 
