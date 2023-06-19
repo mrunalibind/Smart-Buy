@@ -463,14 +463,24 @@
   font-size: 14px;
 }
 
-
-@media screen and (max-width:1100px) {
-  #add3,.container5,.container3,.container2,.slider1,#txt2,#add2{
+@media screen and (max-width: 1100px) {
+  #add3,
+  .container5,
+  .container3,
+  .container2,
+  .slider1,
+  #txt2,
+  #add2 {
     display: none;
   }
 
-  .container4{
+  .container4 {
     margin-top: 20px;
   }
-  
+}
+
+@media screen and (max-width: 500px) {
+  #shopByCategory {
+    display: none;
+  }
 }
