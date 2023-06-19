@@ -31,10 +31,10 @@ function showData(data) {
     image.setAttribute("src", element.image);
 
     let name = document.createElement("p");
-    name.innerText = element.name;
+    name.innerText = element.title;
 
-    let discountPrice = document.createElement("p");
-    discountPrice.innerText = "₹ " + element.discountPrice;
+//     let discountPrice = document.createElement("p");
+//     discountPrice.innerText = "₹ " + element.discountPrice;
 
     let originalPrice = document.createElement("s");
     originalPrice.innerText = "₹ " + element.price;
@@ -90,7 +90,7 @@ function showData(data) {
 
     qbtn.append(increase, Quantity, decrease);
     imgdiv.append(image);
-    card.append(imgdiv, name, discountPrice, qbtn, Delete);
+    card.append(imgdiv, name, originalPrice, qbtn, Delete);
     cartProducts.append(card);
   });
 }
