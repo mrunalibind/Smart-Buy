@@ -61,7 +61,7 @@ otpbtn.addEventListener("click", async (e) => {
     //   document.getElementById("from").reset()
     if (otp == OTP1) {
       alert("Signup successfull");
-      window.location.href = "../index.html";
+      window.location.href = "../html/login.html";
     } else {
       alert("Wrong OTP");
     }
