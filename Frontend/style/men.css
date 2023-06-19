@@ -48,12 +48,13 @@
     margin: auto;
     display: flex;
     background-color: rgb(255, 252, 249);
+    margin-bottom: 140px;
 }
 
 .filter-div {
-    width: 18%;
-    margin-right: 2%;
-    margin-left: 1%;
+    width: 20%;
+    margin-right: 3%;
+    margin-left: 2%;
     font-size: 14px;
 }
 
@@ -96,26 +97,45 @@
 /*  Product container */
 
 #productContainer {
-    width: 85%;
+    width: 70%;
 }
 
 .product-list {
     width: 100%;
+    /* height: 6000px; */
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 3%;
     row-gap: 1%;
-    padding: auto;
     /* overflow-y: scroll; */
-    padding-bottom: 20%;
+    /* padding-bottom: 20%; */
 }
 
+.pagination-wrapper {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.pagination-button {
+    width: 40px;
+    padding: 8px 10px 8px 10px;
+    margin-right: 8px;
+    border-color: rgb(183, 180, 180);
+}
+
+.pagination-button:hover{
+    background-color: #f69f26;
+}
 .product {
     width: 100%;
     margin: auto;
     padding: 3%;
     padding-bottom: 7%;
+    padding-left: 25px;
     border-radius: 1%;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
     line-height: 10px;
@@ -141,10 +161,18 @@
     box-shadow:  rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;;
 }
 
-.product_img {
-    width: 100%;
-    height: 250px;
-    overflow: hidden;
+.image-container {
+    width: 100%; 
+    height: 250px; 
+    max-width: 100%; 
+    max-height: 100%; 
+}
+  
+.image-container img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    object-position: center; 
 }
 
 .best {
@@ -156,6 +184,7 @@
     background-color: #f69f26;
     padding: 6px 6px 6px 6px;
     font-size: 13px;
+    flex-basis: auto;
 }
 
 
@@ -179,5 +208,13 @@
         grid-template-columns: repeat(2, 1fr);
         width: 80%;
     }
+    .best  {
+        margin-left: 40%;
+    }
 }
 
+@media screen and (min-width: 750px) and (max-width:1250px){
+    .best  {
+        margin-left: 40%;
+    }
+}

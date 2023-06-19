@@ -1,11 +1,17 @@
 let token = JSON.parse(localStorage.getItem("token"))
 let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 const cartTotal = document.getElementById("cartTotal");
-let url = "https://fakestoreapi.com"
+let paginationWrapper = document.querySelector(".pagination-wrapper");
+
+let url = "https://dark-red-hippopotamus-toga.cyclic.app";
 
 function fetchdata(queryParamString = null) {
-    fetch(`${url}/products${queryParamString ? queryParamString : ""}`)
+    fetch(`${url}/product${queryParamString ? queryParamString : ""}`)
     .then((res) => {
+        let totalCount = +25;
+        let totalPages = Math.ceil(totalCount / 5)
+        console.log(totalCount, totalPages)
+        renderPagination(totalPages);
         return res.json();
     }).then((data) => {
         displayData(data)
@@ -17,7 +23,7 @@ function fetchdata(queryParamString = null) {
 }
 
 window.addEventListener("load", () => {
-    fetchdata(`?gender=male`);
+    fetchdata(`?gender=Male`);
 })
 
 
@@ -29,20 +35,20 @@ function displayData(data) {
     container.classList.add('product-list'); // Add the "product-list" class to the container
 
     data.forEach(item => {
-        const productElement = productMaker(item.title, item.image, item.category, item.gender, item.price, item.rating, item.review, item.id);
+        const productElement = productMaker(item.title, item.image,item.category, item.brand, item.material , item.price, item.rating, item.review, item._id);
         container.appendChild(productElement);
     });
 
     productContainer.innerHTML = '';
-    productContainer.appendChild(container);
+    productContainer.appendChild(container );
 }
 
 //  card 
-function productMaker(title, image, category,brand, price, rating, review, itemID) {
+function productMaker(title, image, category, brand, material, price, rating, review, itemID) {
     let best = "";
     let star = ""
 
-    if(price >= 150) {
+    if(rating == 5) {
         best = '<span class="best">Bestseller</span>';
     }
     for (let i = 1; i <= rating; i++) {
@@ -54,14 +60,14 @@ function productMaker(title, image, category,brand, price, rating, review, itemI
 
     let product = `<div class=product >
         ${best}
-    <img class="product_img" src=${image} alt="">
+    <div class="image-container"><img class="product_img" src=${image} alt=""></div>
     <h4 class="title">${title}</h4>
     <p class="rating"> ${star} ${review}</p>
     <h2 class="price"> ₹${price} </h2>
-
-    <p class="category"> Category : ${category}</p>
-
     <p class="brand">Brand : ${brand}</p>
+    <p class="category">Category : ${category}</p>
+
+    <p class="material"> Material : ${material}</p>
 
     <button class="add" id="add">Add to cart</button>
         
@@ -77,7 +83,7 @@ function productMaker(title, image, category,brand, price, rating, review, itemI
       const token = localStorage.getItem("token");
       if (token) {
         const obj = {
-          id: itemID,
+          _id: itemID,
           image: image,
           brand: brand,
           price: price,
@@ -99,7 +105,7 @@ function productMaker(title, image, category,brand, price, rating, review, itemI
       } else {
         showAlert("Please login first.", "alert-error");
         setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = "../html/login.html";
         }, 4000)
       }
     });
@@ -113,13 +119,53 @@ function productMaker(title, image, category,brand, price, rating, review, itemI
     
 }
 
+//pagination
+
+function renderPagination(numOfPages) {
+    console.log('i am invoked ', numOfPages)
+  
+    function asListOfButtons() {
+      let arr = [];
+      for (let i = 1; i <=numOfPages; i++) {
+        arr.push(getAsButton(i));
+      }
+      console.log(arr)
+      return arr.join('');
+    }
+  
+    // paginationWrapper.innerHTML = '';
+    paginationWrapper.innerHTML = `
+      <div>  
+        ${asListOfButtons()}  
+      </div>
+    `
+  
+    // whenever this line executes, are we sure that the buttons are present on the dom? yes
+  
+    let paginationButtons = document.querySelectorAll(".pagination-button");
+    for (let btn of paginationButtons) {
+      btn.addEventListener('click', (e) => {
+        let dataId = e.target.dataset.id;
+        fetchdata(`?gender=Male&page=${+dataId}&limit=7`);
+      })
+    }
+}
+  
+  // id=1
+  // <button class="pagination-button" data-id="1">1</button>
+  
+  function getAsButton(pageNumber) {
+    return `<button class="pagination-button" data-id=${pageNumber}>${pageNumber}</button>`
+  }
+
+
 
 
 //to check duplicate products
 
 function checkDuplicate(element) {
     for (let i = 0; i < cartData.length; i++) {
-        if (cartData[i].id == element.id) {
+        if (cartData[i]._id == element._id) {
             return true;
         }
     }
@@ -144,12 +190,18 @@ function filterData(product) {
 
         Brand[i].addEventListener("change", () => {
             productContainer.innerHTML = ""
-            let brandData = product.filter((element) => {
+            let brandData = [];
+            if(Brand[i].checked) {
+                brandData = product.filter((element) => {
 
-                if (element.brand == Brand[i].value) {
-                    return element
-                }
-            })
+                    if (element.brand == Brand[i].value) {
+                        return element
+                    }
+                })
+            } else {
+                brandData = product;
+            }
+            
             displayData(brandData)
 
         })
@@ -161,12 +213,18 @@ function filterData(product) {
 
         Category[i].addEventListener("change", () => {
             productContainer.innerHTML = ""
-            let categoryData = product.filter((element) => {
+            let categoryData = [];
+            if(Category[i].checked) {
+                categoryData = product.filter((element) => {
 
-                if (element.category == Category[i].value) {
-                    return element
-                }
-            })
+                    if (element.category == Category[i].value) {
+                        return element
+                    }
+                })
+            } else {
+                categoryData = product;
+            }
+            
             displayData(categoryData)
 
         })
@@ -178,12 +236,18 @@ function filterData(product) {
 
         Material[i].addEventListener("change", () => {
             productContainer.innerHTML = ""
-            let materialData = product.filter((element) => {
+            let materialData = [];
+            if(Material[i].checked) {
+                materialData = product.filter((element) => {
 
-                if (element.material == Material[i].value) {
-                    return element
-                }
-            })
+                    if (element.material == Material[i].value) {
+                        return element
+                    }
+                })
+            } else {
+                materialData = product;
+            }
+            
             displayData(materialData)
 
         })
@@ -224,12 +288,19 @@ function filterData(product) {
 
         Rating[i].addEventListener("change", () => {
             productContainer.innerHTML = ""
-            let raitngData = product.filter((element) => {
-                if (element.rating == Rating[i].value) {
-                    return element
+            let raitngData = [];
+                if(Rating[i].checked) {
+                    raitngData = product.filter((element) => {
+                    if (element.rating == Rating[i].value) {
+                        return element
+                    }})
+                 
+                } else {
+                    raitngData = product;
                 }
-            })
-            displayData(raitngData)
+                displayData(raitngData)
+
+            
 
         })
     }
@@ -250,7 +321,7 @@ function filterData(product) {
             displayData(data)
         }
         else if (sortBy.value == "top") {
-            fetchdata(`?rating`)
+            fetchdata(`?gender=Male&sortBy=rating`)
         }
 
     })
@@ -264,7 +335,7 @@ function filterData(product) {
    let searchBtn = document.getElementById("search-button")
 
 
-   searchBox.addEventListener("keypress", searchData)
+   searchBox.addEventListener("keyup", searchData)
    searchBtn.addEventListener("click", searchData)
 
    let timeOut;
@@ -275,11 +346,11 @@ function searchData(event) {
    if (event.key === "Enter") {
        event.preventDefault();
        searchBtn.click();
-       fetch(`${url}/products/?search=${searchBox.value}`)
+       fetch(`${url}/product?gender=Male&search=${searchBox.value}`)
            .then((res) => {
                return res.json();
            }).then((data) => {
-               showData(data)
+               displayData(data)
                filterData(data)
            }).catch((err) => {
                // alert(`Nothing found. Please try something else !  `)
@@ -289,11 +360,11 @@ function searchData(event) {
    else {
        clearTimeout(timeOut)
        timeOut = setTimeout(function () {
-           fetch(`${url}/products/?search=${searchBox.value}`)
+           fetch(`${url}/product?gender=Male&search=${searchBox.value}`)
                .then((res) => {
                    return res.json();
                }).then((data) => {
-                   showData(data)
+                   displayData(data)
                    filterData(data)
                }).catch((err) => {
                    // alert(`Nothing found. Please try something else !  `)
