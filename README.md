@@ -1,5 +1,5 @@
 # Smart Buy 
-🍁Innovative live project. Experience it: ([Smart Buy](https://smart-buy-frontend.vercel.app/))
+🍁Innovative live project. Experience it: ([!Smart Buy](https://smart-buy-frontend.vercel.app/))
 
 Smart Buy is your premier online shopping destination, offering a wide array of high-quality products across various categories. From cutting-edge electronics to fashionable apparel, essential home goods to exquisite handicrafts, we provide a seamless and user-friendly platform for you to explore and purchase exactly what you need. With competitive prices, exceptional customer service, and frequent promotions, Smart Buy ensures a convenient and satisfying shopping experience. Say goodbye to the hassle of traditional retail and embrace the convenience and excellence of Smart Buy today.
 
