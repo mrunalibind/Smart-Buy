@@ -94,9 +94,16 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
     background-color: #fafdfb;
     border-radius: 10px;
-    height: 300px;
+    /* border: 1px solid red; */
+    height: 320px;
     width: 30%;
     padding: 40px;
+  }
+
+  .mainCartContainer > #cartdiv2  .extracharges{
+    font-size: small;
+    text-align: center;
+    margin-top: -20px;
   }
   .mainCartContainer > #cartdiv2 > div:nth-child(1) {
     background-color: #232f3e;

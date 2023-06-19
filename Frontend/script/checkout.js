@@ -10,5 +10,5 @@ btn.addEventListener("click",(e)=>{
     e.preventDefault()
     localStorage.removeItem("cart-data");
     alert("Your Payment is successfull");
-    window.location.href="../html/index.html"
+    window.location.href="../index.html"
 })

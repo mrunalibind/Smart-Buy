@@ -429,6 +429,7 @@
   padding: 10px;
   /* background: gray; */
   border-radius: 5px;
+  text-align: center;
   /* aspect-ratio: 16 / 9; */
   /* object-fit: cover; */
 }
@@ -448,7 +449,7 @@
 
 .container5 > #cont5-products > div > p:nth-child(2) {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 14px;
   margin: 5px 0px;
 }
 

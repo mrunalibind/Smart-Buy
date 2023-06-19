@@ -6,10 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Buy</title>
-
-    <link rel="stylesheet" href="../style/header.css">
-    <link rel="stylesheet" href="../style/index.css">
-    <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/footer.css">
     <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
@@ -21,7 +20,7 @@
         <div id="nav1">
             <!-- 1 Logo -->
             <div>
-                <a href="./index.html"><img src="../Images/logo.png" alt=""></a>
+                <a href="./index.html"><img src="./Images/logo.png" alt=""></a>
             </div>
             <!-- 2 Search -->
             <div>
@@ -39,12 +38,12 @@
             <!-- 3 Profile and Cart -->
             <div>
                 <div>
-                    <a href="./Signup.html">
+                    <a href="./html/Signup.html">
                         <i class="fa-solid fa-user"></i>
                     </a>
                 </div>
                 <div>
-                    <a href="./cart.html">
+                    <a href="./html/cart.html">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a><span id="cartTotal">0</span>
                 </div>
@@ -151,21 +150,21 @@
                     <li class="nav-item">
                         <a href="#">
                             <details>
-                                <summary class="nav-link"><a href="./man.html">Men's Fashion</a></summary>
+                                <summary class="nav-link"><a href="./html/man.html">Men's Fashion</a></summary>
                             </details>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#">
                             <details>
-                                <summary class="nav-link"><a href="./women.html">Women's Fashion</a></summary>
+                                <summary class="nav-link"><a href="./html/women.html">Women's Fashion</a></summary>
                             </details>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#">
                             <details>
-                                <summary class="nav-link"><a href="./grocery.html">Grocery</a></summary>
+                                <summary class="nav-link"><a href="./html/grocery.html">Grocery</a></summary>
                             </details>
                         </a>
                     </li>
@@ -208,8 +207,8 @@
                             <a href="#">cs@smartbuy.com</a>
                         </p>
                         <h3>DOWNLOAD APP</h3>
-                        <a href="#"><img src="../Images/getFromPlatStore.PNG" alt="err"></a>
-                        <a href="#"><img src="../Images/getFromApple.PNG" alt="err"></a>
+                        <a href="#"><img src="./Images/getFromPlatStore.PNG" alt="err"></a>
+                        <a href="#"><img src="./Images/getFromApple.PNG" alt="err"></a>
                     </div>
 
 
@@ -713,7 +712,7 @@
 
     <!-- Footer Section  -->
     <section>
-        <p class="top"><a href="./index.html">Back to top</a></p>
+        <p class="top"><a href="./html/index.html">Back to top</a></p>
     </section>
     <footer>
         <div id="flex">
@@ -754,7 +753,7 @@
         <hr>
         <br><br>
         <div id="imgLan">
-            <div><img id="fotterLog" src="../Images/logo.png" alt=""></div>
+            <div><img id="fotterLog" src="./Images/logo.png" alt=""></div>
             <div><select name="" id="">
                     <option value="">🌐 English</option>
                     <option value="">Hindi</option>
@@ -846,11 +845,75 @@
 
     });
 </script>
-<script src="../script/index.js"></script>
+<script src="./script/index.js"></script>
 
 <script>
     let cartData = JSON.parse(localStorage.getItem("cart-data"));
 
     const cartTotal = document.getElementById("cartTotal");
     cartTotal.innerText = cartData.length;
+</script>
+
+<script>
+    // ********************** CONTAINER 5 PRODUCTS (TOP DEALS)*************************************
+    let cont5Products = document.getElementById("cont5-products");
+
+    fetch("./script/container5.json")
+        .then((res) => {
+            return res.json();
+        })
+        .then((actualData) => {
+            console.log(actualData);
+            showData(actualData);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+
+    function showData(data) {
+        data.forEach((element, index) => {
+            let card = document.createElement("div");
+
+            let image = document.createElement("img");
+            image.setAttribute("src", element.image);
+
+            let name = document.createElement("p");
+            name.innerText = element.name;
+
+            let discountPrice = document.createElement("p");
+            discountPrice.innerText = "₹" + element.discountPrice;
+
+            let originalPrice = document.createElement("s");
+            originalPrice.innerText = "₹" + element.originalPrice;
+
+            let button = document.createElement("button");
+            button.innerText = "Add to Cart";
+
+            button.addEventListener("click", () => {
+                let cartData = JSON.parse(localStorage.getItem("cart-data"));
+                if (cartData === null) {
+                    cartData = [];
+                }
+
+                let isAlreadyInCart = false;
+
+                for (let i = 0; i < cartData.length; i++) {
+                    if (cartData[i].id === element.id) {
+                        isAlreadyInCart = true;
+                        break;
+                    }
+                }
+                if (isAlreadyInCart === true) {
+                    alert("Product is already in Cart.");
+                } else {
+                    cartData.push(element);
+                    localStorage.setItem("cart-data", JSON.stringify(cartData));
+                    alert("Product successfully added to Cart.");
+                }
+            });
+
+            card.append(image, name, discountPrice, originalPrice, button);
+            cont5Products.append(card);
+        });
+    }
 </script>
