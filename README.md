@@ -41,7 +41,7 @@ Welcome back to Smart Buy! Log in to your account on our secure and convenient l
 
 ![3](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/ddb57268-f1b4-432a-ab2b-ef6d7cb26e0e)
 
-### OTP Page (After Login)
+### OTP Verification
 
 ![otp](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/3ab43be1-ee60-4e59-bf2d-790d607947fe)
 
