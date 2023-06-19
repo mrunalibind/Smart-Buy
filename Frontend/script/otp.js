@@ -59,7 +59,7 @@ otpbtn.addEventListener("click", async (e) => {
     let res = await responce.json();
     console.log("res", res);
     //   document.getElementById("from").reset()
-    if (otp == OTP) {
+    if (otp == OTP1) {
       alert("Signup successfull");
       window.location.href = "../index.html";
     } else {
