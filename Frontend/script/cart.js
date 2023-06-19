@@ -36,7 +36,7 @@ function showData(data) {
 //     let discountPrice = document.createElement("p");
 //     discountPrice.innerText = "₹ " + element.discountPrice;
 
-    let originalPrice = document.createElement("s");
+    let originalPrice = document.createElement("p");
     originalPrice.innerText = "₹ " + element.price;
 
     let qbtn = document.createElement("div");
