@@ -40,10 +40,10 @@ let otpbtn = document.getElementById("otpbtn");
 otpbtn.addEventListener("click", async (e) => {
   e.preventDefault();
   let otp = localStorage.getItem("otp");
-  console.log(otp);
+//   console.log(otp);
 
   let OTP1 = document.querySelector("#otpinput").value;
-  console.log(OTP1);
+//   console.log(OTP1);
 
   try {
     let url = "https://dark-red-hippopotamus-toga.cyclic.app/user/signup";
@@ -61,7 +61,7 @@ otpbtn.addEventListener("click", async (e) => {
     //   document.getElementById("from").reset()
     if (otp == OTP) {
       alert("Signup successfull");
-      window.location.href = "../index.html";
+      window.location.href = "../html/index.html";
     } else {
       alert("Wrong OTP");
     }
