@@ -103,7 +103,7 @@ function sum() {
   let sum = 0;
   for (let i = 0; i < cartData.length; i++) {
     let q = +cartData[i].quantity;
-    let p = +cartData[i].originalPrice;
+    let p = +cartData[i].price;
     
 
     sum = sum + q * p;
