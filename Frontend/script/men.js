@@ -1,3 +1,4 @@
+
 let token = JSON.parse(localStorage.getItem("token"))
 let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 const cartTotal = document.getElementById("cartTotal");
@@ -19,18 +20,25 @@ function fetchdata(queryParamString = null) {
         document.getElementById("totalItem").innerText = data.length
     }).catch((err) => {
         console.log(err)
+
     })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 window.addEventListener("load", () => {
+
     fetchdata(`?gender=Male`);
 })
 
 
+
 //  All products containining here
-let productContainer = document.getElementById('productContainer');
+let productContainer = document.getElementById("productContainer");
 
 function displayData(data) {
+
     const container = document.createElement('div');
     container.classList.add('product-list'); // Add the "product-list" class to the container
 
@@ -64,13 +72,17 @@ function productMaker(title, image, category, brand, material, price, rating, re
     <h4 class="title">${title}</h4>
     <p class="rating"> ${star} ${review}</p>
     <h2 class="price"> ₹${price} </h2>
+
     <p class="brand">Brand : ${brand}</p>
     <p class="category">Category : ${category}</p>
 
     <p class="material"> Material : ${material}</p>
 
-    <button class="add" id="add">Add to cart</button>
+
+    <p class="rating_count">Review : ${rating}</p>
+    <button class="add" id="add" onclick=addToCart('${itemID}')>Add to cart</button>
         
+
     </div>`
 
 
@@ -168,23 +180,26 @@ function checkDuplicate(element) {
         if (cartData[i]._id == element._id) {
             return true;
         }
-    }
-    return false;
+      })
+      .catch((error) => {
+        console.log("Error:", error);
+      });
+  } else {
+    showAlert("Please login first.", "alert-error");
+    window.location.href = "#";
+  }
 }
-
-
 
 // filter and sorting functionality
 
-let Rating = document.querySelectorAll(".rating-box input")
-let Price = document.querySelectorAll(".price-box input")
-let Material = document.querySelectorAll(".material-box input")
-let Brand = document.querySelectorAll(".brand-box input")
-let Category = document.querySelectorAll(".category-box input")
-
-
+let Rating = document.querySelectorAll(".rating-box input");
+let Price = document.querySelectorAll(".price-box input");
+let Material = document.querySelectorAll(".material-box input");
+let Brand = document.querySelectorAll(".brand-box input");
+let Category = document.querySelectorAll(".category-box input");
 
 function filterData(product) {
+
     //  filter by brand
     for (let i = 0; i < Brand.length; i++) {
 
@@ -250,42 +265,74 @@ function filterData(product) {
             
             displayData(materialData)
 
-        })
+  //  filter by material
+
+  for (let i = 0; i < Material.length; i++) {
+    Material[i].addEventListener("change", () => {
+      productContainer.innerHTML = "";
+      let materialData = product.filter((element) => {
+        if (element.material == Material[i].value) {
+          return element;
+        }
+      });
+      displayData(materialData);
+    });
+  }
+
+  // fiter by price limit
+  for (let i = 0; i < Price.length; i++) {
+    Price[i].addEventListener("change", () => {
+      productContainer.innerHTML = "";
+      let filteredProducts = [];
+
+      if (Price[i].checked) {
+        if (Price[i].value == 500) {
+          filteredProducts = product.filter((element) => element.price <= 50);
+        } else if (Price[i].value == 1000) {
+          filteredProducts = product.filter(
+            (element) => element.price > 50 && element.price <= 100
+          );
+        } else if (Price[i].value == 1500) {
+          filteredProducts = product.filter(
+            (element) => element.price > 1000 && element.price <= 1500
+          );
+        } else if (Price[i].value == 2000) {
+          filteredProducts = product.filter(
+            (element) => element.price > 1500 && element.price <= 2000
+          );
+        } else if (Price[i].value == 2100) {
+          filteredProducts = product.filter((element) => element.price > 2100);
+        }
+      } else {
+        // Checkbox is unchecked, display all products
+        filteredProducts = product;
+      }
+
+      displayData(filteredProducts);
+    });
+  }
+
+
+  let sortBy = document.getElementById("sort");
+  sortBy.addEventListener("change", () => {
+    if (sortBy.value == "priceLowToHigh") {
+      let data = product.sort((a, b) => {
+        return a.price - b.price;
+      });
+      displayData(data);
+    } else if (sortBy.value == "priceHighToLow") {
+      let data = product.sort((a, b) => {
+        return b.price - a.price;
+      });
+      displayData(data);
+    } else if (sortBy.value == "top") {
+      fetchdata(`?rating`);
     }
+  });
+}
 
 
-    // fiter by price limit
-    for (let i = 0; i < Price.length; i++) {
-
-        Price[i].addEventListener("change", () => {
-            productContainer.innerHTML = ""
-            let filteredProducts = [];
-
-            if (Price[i].checked) {
-                if (Price[i].value == 500) {
-                  filteredProducts = product.filter((element) => element.price <= 500);
-                } else if (Price[i].value == 1000) {
-                  filteredProducts = product.filter((element) => element.price > 500 && element.price <= 1000);
-                } else if (Price[i].value == 1500) {
-                  filteredProducts = product.filter((element) => element.price > 1000 && element.price <= 1500);
-                } else if (Price[i].value == 2000) {
-                  filteredProducts = product.filter((element) => element.price > 1500 && element.price <= 2000);
-                } else if (Price[i].value == 2100) {
-                  filteredProducts = product.filter((element) => element.price > 2100);
-                }
-              } else {
-                // Checkbox is unchecked, display all products
-                filteredProducts = product;
-              }
-            
-                displayData(filteredProducts)
-
-        })
-    }
-
-    //by rating
     for (let i = 0; i < Rating.length; i++) {
-
         Rating[i].addEventListener("change", () => {
             productContainer.innerHTML = ""
             let raitngData = [];
@@ -298,36 +345,10 @@ function filterData(product) {
                 } else {
                     raitngData = product;
                 }
-                displayData(raitngData)
-
-            
-
-        })
-    }
-
-    let sortBy = document.getElementById('sort');
-    sortBy.addEventListener("change", () => {
-        if (sortBy.value == "priceLowToHigh") {
-            let data = product.sort((a, b) => {
-                return a.price - b.price
-            });
-            displayData(data)
-        }
-        else if (sortBy.value == "priceHighToLow") {
-
-            let data = product.sort((a, b) => {
-                return b.price - a.price
-            });
-            displayData(data)
-        }
-        else if (sortBy.value == "top") {
-            fetchdata(`?gender=Male&sortBy=rating`)
-        }
+                displayData(raitngData);
 
     })
 
-
-}
 
    //  search functionality 
 
@@ -373,5 +394,6 @@ function searchData(event) {
        }, 1000);
    }
 }
+
 
 

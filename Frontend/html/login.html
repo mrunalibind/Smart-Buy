@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
-    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../style/signup.css">
+    <title>Login</title>
+    <link rel="stylesheet" href="../style/login.css">
     <link rel="stylesheet" href="../style/header.css">
+    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
-
     <!-- Main Navbar -->
     <div id="mainNavbar">
         <!-- Nav 1 : Logo and Search Bar and Login and Cart -->
@@ -234,40 +234,27 @@
         </div>
     </div>
 
+    <!-- login -->
     <div id="maindiv">
         <div id="from">
-            <h2>Create Account</h2>
+            <button id="icons-auth"> <img id="googleicon" src="../Images/icons8-google-48.png" alt="Google"></button>
+            <button id="icons-auth"> <img id="googleicon" src="../Images/facebook.png" alt="Facebook"></button>
             <form>
-                <!-- <label for="Your name">Your name</label><br> -->
-                <input type="text" id="name" class="input" placeholder="Enter Your Name"><br>
                 <!-- <label for="Email">Email</label><br> -->
-                <input type="Email" id="Email" class="input" placeholder="Enter your e-mail"><br>
+                <input type="Email" id="Email" class="input" placeholder="Email"><br>
                 <!-- <label for="Password">Password</label><br> -->
-                <input type="Password" id="Password" class="input" placeholder="Enter your Password"><br>
-                <p class="terms"><input type="checkbox" required> By Clicking, you agree to <br> SmartBuy’s Conditions
-                    of Use and Privacy Policy.</p>
-                <button id="Signupbtn" onclick="onSignup()">Sign Up</button>
-                <p class="temp">Already have an account?<a href="./login.html"> Log in</a> </p>
-
+                <input type="Password" id="Password" class="input" placeholder="Password"><br>
+                <button id="Loginbtn" onclick="onLogin()">Log In</button>
+                <p class="temp">Don't have an account? <a href="./Signup.html">SignUp</a></p>
             </form>
         </div>
     </div>
     <div id="conditions">
-        <p> Conditions of Use Privacy Notice Help <br>© 1996-2023, SmartBuy.com, Inc. or its affiliates</p>
+        <p> Conditions of Use Privacy Notice Help <br>
+            © 1996-2023, SmartBuy.com, Inc. or its affiliates</p>
     </div>
 </body>
 
 </html>
-
-<script src="../script/signup.js">
-
-</script>
-
-<script>
-    let cartData = JSON.parse(localStorage.getItem("cart-data"));
-
-    const cartTotal = document.getElementById("cartTotal");
-    cartTotal.innerText = cartData.length;
-</script>
-
+<script src="../script/signup.js"></script>
 <script src="../script/index.js"></script>

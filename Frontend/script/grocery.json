@@ -1,0 +1,243 @@
+[
+    {
+      "image": "https://m.media-amazon.com/images/I/71CUDoeTVAL._AC_UL400_.jpg",
+      "name": "Saffola Honey Active, Made with Sundarban Forest Honey",
+      "discountPrice": "200.00",
+      "originalPrice": "210.00",
+      "id": "1",
+      "color": "yellow"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/81cqmX-LkvL._AC_UL400_.jpg",
+      "name": "Slurrp Farm Healthy Snacks for Kids | Mighty Puff Choco Ragi | Not Fried, No Maida ",
+      "discountPrice": "500.00",
+      "originalPrice": "740.00",
+      "id": "2",
+      "color": "pink"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/51p3tt6VmmL._AC_UL400_.jpg",
+      "name": "Panaka Italian Chana Sattu Drink Mix, Vegan Breakfast",
+      "discountPrice": "1500.00",
+      "originalPrice": "2599.00",
+      "id": "3",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/713D1eLsaqL._AC_UL400_.jpg",
+      "name": "Happilo 100% Natural Premium California Dried Almonds 500g",
+      "discountPrice": "3100.00",
+      "originalPrice": "3445.00",
+      "id": "4",
+      "color": "green"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61d+WbpFCiL._AC_UL400_.jpg",
+      "name": "Tata Sampann Unpolished Toor Dal (Arhar Dal), 1kg",
+      "discountPrice": "1000.00",
+      "originalPrice": "1555.00",
+      "id": "5",
+      "color": "yellow"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/51+KKothPzL._AC_UL400_.jpg",
+      "name": "Fortune Oil, 1 L Pouch Premium Kachi Ghani Pure Mustard",
+      "discountPrice": "225.00",
+      "originalPrice": "435.00",
+      "id": "6",
+      "color": "black"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/81cgKFsOngL._AC_UL400_.jpg",
+      "name": "Vedaka Jaggery Powder, 1kg Jar.",
+      "discountPrice": "2225.00",
+      "originalPrice": "3453.00",
+      "id": "7",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/71lmddoIdNL._AC_UL400_.jpg",
+      "name": "Nuts About You Raisin, 500 g | 100% Natural | Premium| Kishmish",
+      "discountPrice": "12000.00",
+      "originalPrice": "16440.00",
+      "id": "8",
+      "color": "green"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/814iBcUf1aL._AC_UL400_.jpg",
+      "name": "UNIBIC Cookies, Assorted Cookies, 75 g (Pack of 10) | Biscuits Combo Pack",
+      "discountPrice": "300.00",
+      "originalPrice": "479.00",
+      "id": "9",
+      "color": "black"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/81Xzx5PHTFL._AC_UL400_.jpg",
+      "name": "MAGGI 2-Minute Noodles Masala, 70g (Pack of 12)",
+      "discountPrice": "1040.00",
+      "originalPrice": "14659.00",
+      "id": "10",
+      "color": "black"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61SHF0RYZDL._AC_UL400_.jpg",
+      "name": "Quaker Oats 2kg | Rolled Oats | 100% Natural Wholegrain",
+      "discountPrice": "344.00",
+      "originalPrice": "99.00",
+      "id": "11",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/41JUzYwoBWL._AC_UL400_.jpg",
+      "name": "Del Monte Tomato Ketchup - Classic Blend, 900g/950g",
+      "discountPrice": "456.00",
+      "originalPrice": "765.00",
+      "id": "1",
+      "color": "white"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/810jp1zceeL._AC_UL400_.jpg",
+      "name": "Daawat Rozana Super, Naturally Aged, Rich Aroma",
+      "originalPrice": "2434.00",
+      "discountPrice": "456.00",
+      "id": "2",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/71YsDkOR8pL._AC_UL400_.jpg",
+      "name": "Oleev Active, with Goodness of Olive Oil Jar, 5L Jar",
+      "originalPrice": "3254.00",
+      "discountPrice": "435.00",
+      "id": "3",
+      "color": "yellow"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/71foBxdA7tL._AC_UL400_.jpg",
+      "name": "Cadbury Bournvita Chocolate Health Drink, 2 kg",
+      "originalPrice": "234.00",
+      "discountPrice": "5677.00",
+      "id": "4",
+      "color": "black"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/81A6+BqA6oL._AC_UL400_.jpg",
+      "name": "Daawat Super, Perfectly Aged, Long Grain with Rich Aroma",
+      "originalPrice": "2345.00",
+      "discountPrice": "56768.00",
+      "id": "5",
+      "color": "white"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/51QF8woKr5S._AC_UL400_.jpg",
+      "name": "Tata Tea Premium | Desh Ki Chai | Unique Blend",
+      "originalPrice": "345.00",
+      "discountPrice": "567.00",
+      "id": "6",
+      "color": "black"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61DMPchFPLL._AC_UL400_.jpg",
+      "name": "Dabur Vedic Tea - 500g (Black Tea) | Handpicked from Assam",
+      "originalPrice": "3453.00",
+      "discountPrice": "324545.00",
+      "id": "7",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/71mRGdxxnhS._AC_UL400_.jpg",
+      "name": "Kikkoman Soy Sauce, 16.91 fl oz / 500 ml",
+      "originalPrice": "345.00",
+      "discountPrice": "456.00",
+      "id": "8",
+      "color": "white"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61HYcQ3CrlL._AC_UL400_.jpg",
+      "name": "Tata Tea Agni | Strong chai With 10% Extra Strong Leaves",
+      "originalPrice": "345.00",
+      "discountPrice": "5673.00",
+      "id": "9",
+      "color": "green"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/71YotmoCOkL._AC_UL400_.jpg",
+      "name": "Glucon-D Instant Energy Health Drink Tangy Orange",
+      "originalPrice": "453.00",
+      "discountPrice": "225.00",
+      "id": "10",
+      "color": "pink"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61zzGT2NDJL._AC_UL400_.jpg",
+      "name": "Tata Sampann Unpolished Masoor Dal (Whole), 1kg",
+      "originalPrice": "992.00",
+      "discountPrice": "225.00",
+      "id": "11",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/713q2GS9tML._AC_UL400_.jpg",
+      "name": "Happilo Premium California Roasted & Salted Pistachios",
+      "originalPrice": "16440.00",
+      "discountPrice": "225.00",
+      "id": "8",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61rUibXYkTL._AC_UL400_.jpg",
+      "name": "Tata Sampann Unpolished Moong Dal (Chilka), 500g",
+      "originalPrice": "4479.00",
+      "discountPrice": "225.00",
+      "id": "9",
+      "color": "red"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61u1Ft3gbNL._AC_UL400_.jpg",
+      "name": "Farmley Prasadam Makhana Fox Nuts 100 g",
+      "originalPrice": "14459.00",
+      "discountPrice": "225.00",
+      "id": "10",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/6101LsNX0wL._AC_UL400_.jpg",
+      "name": "UNIBIC Cookies, Cashew Badam Cookies, 500g",
+      "originalPrice": "992.00",
+      "discountPrice": "225.00",
+      "id": "11",
+      "color": "blue"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61woQH3Dz1L._AC_UL400_.jpg",
+      "name": "Cadbury Oreo Vanilla Flavour Crème Sandwich Biscuit",
+      "originalPrice": "3453.00",
+      "discountPrice": "225.00",
+      "id": "7",
+      "color": "green"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61LUncDv3KL._AC_UL400_.jpg",
+      "name": "Sunfeast YiPPee! Magic Masala, Instant Noodles",
+      "originalPrice": "16440.00",
+      "discountPrice": "225.00",
+      "id": "8",
+      "color": "green"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/71BJWtfB-aL._AC_UL400_.jpg",
+      "name": "Bagrry's Crunchy Muesli with 30% Fruit & Nut Cranberries",
+      "originalPrice": "4479.00",
+      "discountPrice": "225.00",
+      "id": "9",
+      "color": "pink"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/71fRmN7fFWL._AC_UL400_.jpg",
+      "name": "Happilo Healthy Dry Fruit Energy Bar Assorted Pack of 12",
+      "originalPrice": "149.00",
+      "discountPrice": "225.00",
+      "id": "10",
+      "color": "green"
+    }
+  ]
+  

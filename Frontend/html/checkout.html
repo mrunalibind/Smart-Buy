@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign up</title>
-    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../style/signup.css">
+    <title>Payment</title>
     <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/checkout.css">
+    <script src="https://kit.fontawesome.com/8609a682e1.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-
     <!-- Main Navbar -->
     <div id="mainNavbar">
         <!-- Nav 1 : Logo and Search Bar and Login and Cart -->
@@ -234,40 +234,185 @@
         </div>
     </div>
 
-    <div id="maindiv">
-        <div id="from">
-            <h2>Create Account</h2>
+    <!-- Payment form -->
+    <div class="col-75">
+        <div class="container">
             <form>
-                <!-- <label for="Your name">Your name</label><br> -->
-                <input type="text" id="name" class="input" placeholder="Enter Your Name"><br>
-                <!-- <label for="Email">Email</label><br> -->
-                <input type="Email" id="Email" class="input" placeholder="Enter your e-mail"><br>
-                <!-- <label for="Password">Password</label><br> -->
-                <input type="Password" id="Password" class="input" placeholder="Enter your Password"><br>
-                <p class="terms"><input type="checkbox" required> By Clicking, you agree to <br> SmartBuy’s Conditions
-                    of Use and Privacy Policy.</p>
-                <button id="Signupbtn" onclick="onSignup()">Sign Up</button>
-                <p class="temp">Already have an account?<a href="./login.html"> Log in</a> </p>
+                <h2 style="text-align: center;">Your Total Price:<span id="total"></span></h2>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-50">
+                        <h3>Billing Address</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="text" id="email" name="email" placeholder="john@example.com">
+                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                        <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                        <input type="text" id="city" name="city" placeholder="New York">
 
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="state">State</label>
+                                <input type="text" id="state" name="state" placeholder="NY">
+                            </div>
+                            <div class="col-50">
+                                <label for="zip">Zip</label>
+                                <input type="text" id="zip" name="zip" placeholder="10001">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-50">
+                        <h3>Payment</h3>
+                        <label for="fname">Accepted Cards</label>
+                        <div class="icon-container">
+                            <i class="fa fa-cc-visa" style="color:navy;"></i>
+                            <i class="fa fa-cc-amex" style="color:blue;"></i>
+                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                        </div>
+                        <label for="cname">Name on Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                        <label for="ccnum">Credit card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+                        <label for="expmonth">Exp Month</label>
+                        <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+                        <div class="row">
+                            <div class="col-50">
+                                <label for="expyear">Exp Year</label>
+                                <input type="text" id="expyear" name="expyear" placeholder="2018">
+                            </div>
+                            <div class="col-50">
+                                <label for="cvv">CVV</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="352">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <label>
+                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                </label>
+                <input type="submit" value="Continue to checkout" id="check" class="btn">
             </form>
         </div>
     </div>
-    <div id="conditions">
-        <p> Conditions of Use Privacy Notice Help <br>© 1996-2023, SmartBuy.com, Inc. or its affiliates</p>
-    </div>
+
+
+    <!-- Footer Section  -->
+    <!-- <section> -->
+
+    <!-- </section> -->
+    <footer>
+        <p class="top">Back to top</p>
+        <div id="flex">
+            <div>
+                <h4>Get to Know Us</h4>
+                <p>About Us</p>
+                <p>Careers</p>
+                <p>Press Releases</p>
+                <p>Amazon Science</p>
+            </div>
+            <div>
+                <h4>Connect with Us</h4>
+                <p>Facebook</p>
+                <p>Twitter</p>
+                <p>Instagram</p>
+            </div>
+            <div>
+                <h4>Make Money with Us</h4>
+                <p>Sell on Amazon</p>
+                <p>Sell under Amazon Accelerator</p>
+                <p>Protect and Build Your Brand</p>
+                <p>Amazon Global Selling</p>
+                <p>Become an Affiliate</p>
+                <p>Fulfilment by Amazon</p>
+                <p>Advertise Your Products</p>
+                <p>Amazon Pay on Merchants</p>
+            </div>
+            <div>
+                <h4>Let Us Help You</h4>
+                <p>COVID-19 and Amazon</p>
+                <p>Your Account</p>
+                <p>Returns Centre</p>
+                <p>100% Purchase Protection</p>
+                <p>SmartBuy App Download</p>
+                <p>Help</p>
+            </div>
+        </div>
+        <hr>
+        <br><br>
+        <div id="imgLan">
+            <div><img id="fotterLog" src="../Images/logo.png" alt=""></div>
+            <div><select name="" id="">
+                    <option value="">🌐 English</option>
+                    <option value="">Hindi</option>
+                    <option value="">Marathi</option>
+                    <option value="">Telgu</option>
+                    <option value="">Kannada</option>
+                </select></div>
+        </div>
+        <div id="para">
+            <br>
+            <p>Australi Brazil Canada China France Germany Italy Japan Mexico Netherlands Poland Singapore Spain Turkey
+                United Arab Emirates United Kingdom United States</p>
+        </div>
+        <br><br>
+        <div id="foot2">
+            <div id="footer2">
+                <div>
+                    <h5>AbeBooks</h5>
+                    <p>Books, art</p>
+                    <p>&collectibles</p>
+
+                    <h5>Shopbop</h5>
+                    <p>Designer</p>
+                    <p>Fashion Brands</p>
+                </div>
+                <div>
+                    <h5>SmartBuy Web Services</h5>
+                    <p>Scalable Cloud</p>
+                    <p>Computing Services</p>
+
+                    <h5>ShopBuy Business</h5>
+                    <p>Everything For</p>
+                    <p>Your Business</p>
+                </div>
+
+                <div>
+                    <h5>Audible</h5>
+                    <p>Download</p>
+                    <p>Audio Books</p>
+
+                    <h5>Prime Now</h5>
+                    <p>2-Hour Delivery</p>
+                    <p>on Everyday Items</p>
+                </div>
+                <div>
+                    <h5>DPReviews</h5>
+                    <p>Digital</p>
+                    <p>Photography</p>
+
+                    <h5>ShopBuy Prime Music</h5>
+                    <p>100 million songs, ad-free</p>
+                    <p>Over 15 million podcast episodes</p>
+                </div>
+                <div>
+                    <h5>IMDb</h5>
+                    <p>Movies, TV</p>
+                    <p>& Celebrities</p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
 </body>
+<script src="../script/checkout.js"></script>
 
 </html>
-
-<script src="../script/signup.js">
-
-</script>
-
-<script>
-    let cartData = JSON.parse(localStorage.getItem("cart-data"));
-
-    const cartTotal = document.getElementById("cartTotal");
-    cartTotal.innerText = cartData.length;
-</script>
-
-<script src="../script/index.js"></script>
