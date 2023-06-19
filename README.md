@@ -44,8 +44,12 @@ Welcome back to Smart Buy! Log in to your account on our secure and convenient l
 ### Womens Page
 Indulge in the latest fashion trends and timeless styles on our women's clothing product page. Explore an extensive collection of chic dresses, trendy tops, comfortable activewear, and more. From casual everyday wear to elegant evening attire, find the perfect pieces to elevate your wardrobe. Enjoy a seamless shopping experience and express your personal style with confidence at Smart Buy's women's clothing product page.
 
+![w](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/4028ad65-fdcf-4af4-8ef1-0c6dd5849254)
+
 ### Mens Page
 Elevate your style and refine your wardrobe with our men's clothing product page. Discover a wide range of fashionable apparel, from casual essentials to formal attire. Explore our collection of stylish shirts, comfortable jeans, tailored suits, and accessories that will enhance your look for any occasion. Find the perfect fit and express your individuality with confidence at Smart Buy's men's clothing product page.
+
+![m](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/9f313048-d6d6-4f92-bfef-60cd60cf84bf)
 
 ### Grocery Page
 Discover a world of fresh and delicious possibilities on our grocery product page. Browse through our extensive selection of high-quality fruits, vegetables, pantry staples, and gourmet treats. From organic options to international flavors, find everything you need to fill your kitchen with culinary delight. Shop with confidence and convenience at Smart Buy's grocery product page.
