@@ -3,11 +3,10 @@ login.addEventListener("click", async (e) => {
   e.preventDefault();
 
   const payload = {
-    name: document.getElementById("name").value,
     email: document.getElementById("Email").value,
     password: document.getElementById("Password").value,
   };
-  localStorage.setItem("name", payload.name);
+  localStorage.setItem("name", payload.email);
   console.log(payload);
 
   try {
