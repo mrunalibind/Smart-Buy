@@ -179,15 +179,9 @@ function checkDuplicate(element) {
     for (let i = 0; i < cartData.length; i++) {
         if (cartData[i]._id == element._id) {
             return true;
-        }
-      })
-      .catch((error) => {
-        console.log("Error:", error);
-      });
-  } else {
-    showAlert("Please login first.", "alert-error");
-    window.location.href = "#";
-  }
+        } 
+    }
+    return false;  
 }
 
 // filter and sorting functionality
@@ -264,20 +258,9 @@ function filterData(product) {
             }
             
             displayData(materialData)
+        })
+    }
 
-  //  filter by material
-
-  for (let i = 0; i < Material.length; i++) {
-    Material[i].addEventListener("change", () => {
-      productContainer.innerHTML = "";
-      let materialData = product.filter((element) => {
-        if (element.material == Material[i].value) {
-          return element;
-        }
-      });
-      displayData(materialData);
-    });
-  }
 
   // fiter by price limit
   for (let i = 0; i < Price.length; i++) {
@@ -313,25 +296,6 @@ function filterData(product) {
   }
 
 
-  let sortBy = document.getElementById("sort");
-  sortBy.addEventListener("change", () => {
-    if (sortBy.value == "priceLowToHigh") {
-      let data = product.sort((a, b) => {
-        return a.price - b.price;
-      });
-      displayData(data);
-    } else if (sortBy.value == "priceHighToLow") {
-      let data = product.sort((a, b) => {
-        return b.price - a.price;
-      });
-      displayData(data);
-    } else if (sortBy.value == "top") {
-      fetchdata(`?rating`);
-    }
-  });
-}
-
-
     for (let i = 0; i < Rating.length; i++) {
         Rating[i].addEventListener("change", () => {
             productContainer.innerHTML = ""
@@ -347,9 +311,33 @@ function filterData(product) {
                 }
                 displayData(raitngData);
 
+        })
+    }
+
+    
+    let sortBy = document.getElementById('sort');
+    sortBy.addEventListener("change", () => {
+        if (sortBy.value == "priceLowToHigh") {
+            let data = product.sort((a, b) => {
+                return a.price - b.price
+            });
+            displayData(data)
+        }
+        else if (sortBy.value == "priceHighToLow") {
+
+            let data = product.sort((a, b) => {
+                return b.price - a.price
+            });
+            displayData(data)
+        }
+        else if (sortBy.value == "top") {
+            fetchdata(`?gender=Female&sortBy=rating`)
+        }
+
     })
-
-
+}
+    
+    
    //  search functionality 
 
    let searchBox = document.getElementById("search-box")
