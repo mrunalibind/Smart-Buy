@@ -37,7 +37,7 @@ function showData(data) {
 //     discountPrice.innerText = "₹ " + element.discountPrice;
 
     let originalPrice = document.createElement("p");
-    originalPrice.innerText = element.price;
+    originalPrice.innerText = '₹ '+element.price;
 
     let qbtn = document.createElement("div");
     qbtn.setAttribute("id", "qbtn");
@@ -103,7 +103,8 @@ function sum() {
   let sum = 0;
   for (let i = 0; i < cartData.length; i++) {
     let q = +cartData[i].quantity;
-    let p = +cartData[i].discountPrice;
+    let p = +cartData[i].originalPrice;
+    
 
     sum = sum + q * p;
     console.log(sum);
