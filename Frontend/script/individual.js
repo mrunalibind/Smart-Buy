@@ -1,23 +1,23 @@
 let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
-let main = document.getElementsByTagName('main')[0];
+let main = document.querySelector('.indi');
 
 const cartTotal = document.getElementById("cartTotal");
 let ID = JSON.parse(localStorage.getItem("product")) || [];
 
 function fetchData() {
-    fetch(`https://fakestoreapi.com/products/${ID}`)
+    fetch(`https://dark-red-hippopotamus-toga.cyclic.app/product/${ID}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data)
-        appendToDom(data.title, data.price, data.image, data.brand, data.id, data.gender, data.category, data.rating, data.review)
+        appendToDom(data.title, data.price, data.image, data.brand, data._id, data.material, data.category, data.rating, data.review)
       })
   }
   fetchData();
-  function appendToDom(title, price, image, brand, id, gender, category, review, rating) {
+  function appendToDom(title, price, image, brand, id, gender, category, rating, review) {
     let best = "";
     let star = ""
 
-    if(price >= 150) {
+    if(rating == 5) {
         best = '<span class="best">Bestseller</span>';
     }
     for (let i = 1; i <= rating; i++) {
@@ -27,12 +27,13 @@ function fetchData() {
         star += `<span class="fa fa-star"></span>`
     }
     main.innerHTML = `<div class="imagediv">
+      ${best}
       <img src="${image}" alt=""/>
     </div>
     <div class="productdetails">
       <h3>Brand: ${brand}</h3>
       <h3>${title}</h3>
-      <p> <span id="span">${rating} ${star}</span> ${review}</p><hr>
+      <p> <span id="span"> ${star}</span> ${review}</p><hr>
       <p id="priice">₹${price}</p>
       
       <div class="selectcolo">
@@ -62,16 +63,11 @@ function fetchData() {
         </div>
       </div>
       <div class="offer">
-        <p>GET IT FOR ₹${price - 100}</p>
+        <p id="extra">Extra Savings</p>
         <div>
-          <div class="left">
-            <p>Use code </p>
-            <p>T&C</p>
-          </div>
           <div class="right">
             <p>
-              Extra Upto 29% Off on ₹2490 and Above. Max Discount 1350. View
-              All Products>
+            Save 10% on this item when you purchase 1 or more of this category
             </p>
           </div>
         </div>
@@ -85,7 +81,7 @@ function fetchData() {
         }
         else {
           let obj = {
-            id: id,
+            _id: id,
             image: image,
             brand: brand,
             price: price,
@@ -117,7 +113,7 @@ function fetchData() {
 
 function checkDuplicate(element) {
     for (let i = 0; i < cartData.length; i++) {
-        if (cartData[i].id == element.id) {
+        if (cartData[i]._id == element._id) {
             return true;
         }
     }
