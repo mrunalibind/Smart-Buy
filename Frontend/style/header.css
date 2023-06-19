@@ -119,7 +119,7 @@
 
 /* nav 02 */
 #nav02 {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   background-color: #232f3e;
   justify-content: space-between;
   display: flex;
