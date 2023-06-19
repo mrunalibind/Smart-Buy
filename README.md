@@ -42,10 +42,12 @@ Welcome back to Smart Buy! Log in to your account on our secure and convenient l
 ![3](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/ddb57268-f1b4-432a-ab2b-ef6d7cb26e0e)
 
 ### OTP Verification
+Secure your account with an added layer of protection using our OTP (One-Time Password) verification page. Enter the unique code sent to your registered mobile number or email address to verify your identity and ensure a safe and secure login experience. Your security is our priority at Smart Buy, and our OTP verification page helps keep your account protected from unauthorized access.
 
 ![otp](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/3ab43be1-ee60-4e59-bf2d-790d607947fe)
 
 ### Forget Password
+Forgot your password? No worries, we've got you covered. Visit our "Forgot Password" page and enter your registered email address. We'll send you a password reset link to regain access to your account. Safeguard your Smart Buy account and get back to enjoying a seamless shopping experience in no time.
 
 ![fp](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/587defe4-08e4-45f6-ada9-52358a6eb615)
 
