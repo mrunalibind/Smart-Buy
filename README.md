@@ -41,6 +41,14 @@ Welcome back to Smart Buy! Log in to your account on our secure and convenient l
 
 ![3](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/ddb57268-f1b4-432a-ab2b-ef6d7cb26e0e)
 
+### OTP Page (After Login)
+
+![otp](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/3ab43be1-ee60-4e59-bf2d-790d607947fe)
+
+### Forget Password
+
+![fp](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/587defe4-08e4-45f6-ada9-52358a6eb615)
+
 ### Womens Page
 Indulge in the latest fashion trends and timeless styles on our women's clothing product page. Explore an extensive collection of chic dresses, trendy tops, comfortable activewear, and more. From casual everyday wear to elegant evening attire, find the perfect pieces to elevate your wardrobe. Enjoy a seamless shopping experience and express your personal style with confidence at Smart Buy's women's clothing product page.
 
