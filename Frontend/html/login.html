@@ -237,14 +237,16 @@
     <!-- login -->
     <div id="maindiv">
         <div id="from">
-            <button id="icons-auth"> <img id="googleicon" src="../Images/icons8-google-48.png" alt="Google"></button>
-            <button id="icons-auth"> <img id="googleicon" src="../Images/facebook.png" alt="Facebook"></button>
+            <button class="Googlebtn" id="authgoogle"> <img class="googleicon" src="../Images/icons8-google-48.png" alt="Google"></button>
+            <button class="Googlebtn" > <img class="googleicon" src="../Images/facebook.png" alt="Facebook"></button>
             <form>
                 <!-- <label for="Email">Email</label><br> -->
                 <input type="Email" id="Email" class="input" placeholder="Email"><br>
                 <!-- <label for="Password">Password</label><br> -->
                 <input type="Password" id="Password" class="input" placeholder="Password"><br>
-                <button id="Loginbtn" onclick="onLogin()">Log In</button>
+                <h6><a id="forgetpass" href="./forgetpass.html">Forget Password</a></h6>
+
+                <button id="loginbtn">Log In</button>
                 <p class="temp">Don't have an account? <a href="./Signup.html">SignUp</a></p>
             </form>
         </div>
@@ -258,3 +260,10 @@
 </html>
 <script src="../script/signup.js"></script>
 <script src="../script/index.js"></script>
+<script src="../script/login.js"></script>
+<script>
+    let cartData = JSON.parse(localStorage.getItem("cart-data"));
+
+    const cartTotal = document.getElementById("cartTotal");
+    cartTotal.innerText = cartData.length;
+</script>

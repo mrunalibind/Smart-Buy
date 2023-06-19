@@ -1,0 +1,46 @@
+body {
+  margin: 0%;
+  padding: 0%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#maindiv{
+    margin-top: 250px;
+}
+
+#from {
+  width: 50%;
+  margin: auto;
+  padding: 15px;
+  height: 270px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.input {
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+#otpbtn {
+  width: 200px;
+  border: none;
+  outline: none;
+  background-color: #232f3e;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 15px 0px;
+  font-size: large;
+  cursor: pointer;
+  font-weight: 500;
+}
+p {
+  margin-top: 30px;
+}
