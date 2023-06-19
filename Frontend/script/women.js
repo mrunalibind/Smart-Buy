@@ -1,4 +1,3 @@
-
 let token = JSON.parse(localStorage.getItem("token"))
 let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 const cartTotal = document.getElementById("cartTotal");
@@ -6,9 +5,8 @@ let paginationWrapper = document.querySelector(".pagination-wrapper");
 
 let url = "https://dark-red-hippopotamus-toga.cyclic.app"
 
-
+//api call
 function fetchdata(queryParamString = null) {
-
     fetch(`${url}/product${queryParamString ? queryParamString : ""}`)
     .then((res) => {
         let totalCount = +25;
@@ -24,14 +22,6 @@ function fetchdata(queryParamString = null) {
     }).catch((err) => {
         console.log(err)
     })
-    .then((data) => {
-      displayData(data);
-      filterData(data);
-      document.getElementById("totalItem").innerText = data.length;
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 }
 
 window.addEventListener("load", () => {
@@ -39,9 +29,8 @@ window.addEventListener("load", () => {
 })
 
 
-
 //  All products containining here
-let productContainer = document.getElementById("productContainer");
+let productContainer = document.getElementById('productContainer');
 
 function displayData(data) {
     const container = document.createElement('div');
@@ -80,14 +69,10 @@ function productMaker(title, image, category,brand, material, price, rating, rev
     <p class="brand">Brand : ${brand}</p>
     <p class="category"> Category : ${category}</p>
 
-
     <p class="material"> Material : ${material}</p>
 
-
-    <p class="rating_count">Review : ${rating}</p>
-    <button class="add" id="add" onclick=addToCart('${itemID}')>Add to cart</button>
+    <button class="add" id="add">Add to cart</button>
         
-
     </div>`
 
 
@@ -97,7 +82,7 @@ function productMaker(title, image, category,brand, material, price, rating, rev
     const addToCartButton = productCard.querySelector(".add");
     addToCartButton.addEventListener("click", (e) => {
       e.stopPropagation();
-      const token = localStorage.getItem("token") || true;
+      const token = localStorage.getItem("token");
       if (token) {
         const obj = {
           _id: itemID,
@@ -176,50 +161,31 @@ function renderPagination(numOfPages) {
   }
 
 
-//  add to cart function
-let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-function addToCart(ID) {
-  // Check if user is logged in
-  const token = localStorage.getItem("token") || true;
 
-  if (token) {
-    // User is logged in, make a POST request to /cart route
-    const product = productDetails(ID);
-    console.log(product);
-    if (checkDuplicate(product)) {
-      showAlert("Product already in the cart", "alert-error");
-    } else {
-      cartItems.push({ ...product, quantity: 1 });
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
-      showAlert("Product added to cart", "alert-success");
-    }
-  } else {
-    showAlert("Please login first.", "alert-error");
-    window.location.href = "#";
-  }
-}
+//to check duplicate products
 
 function checkDuplicate(element) {
-
     for (let i = 0; i < cartData.length; i++) {
         if (cartData[i]._id == element._id) {
             return true;
         }
-
     }
-  }
-  return false;
+    return false;
 }
+
+
 
 
 // filter and sorting functionality
 
-let Rating = document.querySelectorAll(".rating-box input");
-let Price = document.querySelectorAll(".price-box input");
-let Material = document.querySelectorAll(".material-box input");
-let Brand = document.querySelectorAll(".brand-box input");
-let Category = document.querySelectorAll(".category-box input");
+let Rating = document.querySelectorAll(".rating-box input")
+let Price = document.querySelectorAll(".price-box input")
+let Material = document.querySelectorAll(".material-box input")
+let Brand = document.querySelectorAll(".brand-box input")
+let Category = document.querySelectorAll(".category-box input")
+
+
 
 function filterData(product) {
     //  filter by brand
@@ -361,17 +327,23 @@ function filterData(product) {
         else if (sortBy.value == "top") {
             fetchdata(`?gender=Female&sortBy=rating`)
         }
-      });
-      displayData(categoryData);
-    });
-  }
 
-  
+    })
+
+
+}
+
+    //  search functionality 
+
+    let searchBox = document.getElementById("search-box")
+    let searchBtn = document.getElementById("search-button")
+
 
     searchBox.addEventListener("keyup", searchData)
     searchBtn.addEventListener("click", searchData)
 
-
+    let timeOut;
+    let count = 0;
 
 
 function searchData(event) {
@@ -405,6 +377,3 @@ function searchData(event) {
         }, 1000);
     }
 }
-
-
-
