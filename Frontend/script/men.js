@@ -1,5 +1,5 @@
 
-let token = JSON.parse(localStorage.getItem("token"))
+let token = localStorage.getItem("token");
 let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 const cartTotal = document.getElementById("cartTotal");
 let paginationWrapper = document.querySelector(".pagination-wrapper");
