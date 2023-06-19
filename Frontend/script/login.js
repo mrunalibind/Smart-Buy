@@ -24,7 +24,7 @@ login.addEventListener("click", async (e) => {
     let res = await responce.json();
     console.log("res", res.accessToken);
     //   document.getElementById("from").reset()
-    localStorage.setItem("localAccesstoken", res.accessToken);
+    localStorage.setItem("token", res.accessToken);
 
     alert(`${payload.email} Successfull login`);
     window.location.href = "../index.html";
@@ -44,7 +44,7 @@ google.addEventListener("click", (e) => {
     })
     .then((data) => {
       console.log(data);
-      localStorage.setItem("localAccesstoken", data.accesstoken);
+      localStorage.setItem("token", data.accesstoken);
     })
     .catch((err) => {
       console.log(err);
