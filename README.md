@@ -61,5 +61,3 @@ Manage your shopping with ease on our convenient cart page. Review and modify yo
 Complete your purchase securely and confidently on our dedicated payment page. Choose from a variety of trusted payment options, enter your details with peace of mind knowing that your information is encrypted and protected. Our streamlined payment process ensures a seamless transaction, allowing you to finalize your order and eagerly await the arrival of your chosen products. Shop with peace of mind and convenience at Smart Buy's secure payment page.
 
 ![6](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/d7b42cab-4438-45c5-9ba8-a326d1876147)
-
-
