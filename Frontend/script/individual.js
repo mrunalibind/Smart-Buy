@@ -1,3 +1,4 @@
+let token = localStorage.getItem("token");
 let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
 let main = document.querySelector('.indi');
 
@@ -75,9 +76,13 @@ function fetchData() {
     </div>`
     document.getElementById('addtocart').addEventListener('click', () => {
         cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
+        const token = localStorage.getItem("token");
 
-        if (cartData.length == 0) {
-          window.location.href = 'signIn.html'
+        if (!token) {
+          showAlert("Please login first.", "alert-error");
+          setTimeout(() => {
+              window.location.href = "../html/login.html";
+          }, 4000)        
         }
         else {
           let obj = {
