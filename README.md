@@ -51,7 +51,7 @@ Forgot your password? No worries, we've got you covered. Visit our "Forgot Passw
 
 ![fp](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/587defe4-08e4-45f6-ada9-52358a6eb615)
 
-### Womens Page
+### Women's Page
 Indulge in the latest fashion trends and timeless styles on our women's clothing product page. Explore an extensive collection of chic dresses, trendy tops, comfortable activewear, and more. From casual everyday wear to elegant evening attire, find the perfect pieces to elevate your wardrobe. Enjoy a seamless shopping experience and express your personal style with confidence at Smart Buy's women's clothing product page.
 
 ![w](https://github.com/mrunalibind/honest-wing-5796/assets/75576920/4028ad65-fdcf-4af4-8ef1-0c6dd5849254)
